@@ -1,0 +1,8 @@
+<svg width="640" height="360" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="360" fill="#1C1410"/>
+  <circle cx="320" cy="180" r="100" stroke="#B68A3A" stroke-width="0.8"/>
+  <ellipse cx="320" cy="180" rx="140" ry="45" stroke="#B68A3A" stroke-width="0.8" transform="rotate(-20 320 180)"/>
+  <circle cx="320" cy="180" r="30" fill="#632D3D" stroke="#B68A3A" stroke-width="1"/>
+  <text x="320" y="188" fill="#FFFDF8" font-size="22" font-family="serif" text-anchor="middle">♄</text>
+  <text x="320" y="310" fill="#B68A3A" font-size="11" font-family="sans-serif" text-anchor="middle" letter-spacing="2">CAREER &amp; 10TH HOUSE</text>
+</svg>

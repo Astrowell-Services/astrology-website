@@ -1,0 +1,10 @@
+<svg width="640" height="360" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="360" fill="#17120E"/>
+  <circle cx="270" cy="180" r="50" stroke="#B68A3A" stroke-width="0.8" stroke-dasharray="2 3"/>
+  <circle cx="370" cy="180" r="50" stroke="#B68A3A" stroke-width="0.8" stroke-dasharray="2 3"/>
+  <circle cx="270" cy="180" r="22" fill="#632D3D" stroke="#B68A3A" stroke-width="0.8"/>
+  <circle cx="370" cy="180" r="22" fill="#24211F" stroke="#B68A3A" stroke-width="0.8"/>
+  <text x="270" y="186" fill="#FFFDF8" font-size="16" font-family="serif" text-anchor="middle">☊</text>
+  <text x="370" y="186" fill="#FFFDF8" font-size="16" font-family="serif" text-anchor="middle">☋</text>
+  <text x="320" y="310" fill="#B68A3A" font-size="11" font-family="sans-serif" text-anchor="middle" letter-spacing="2">RAHU &amp; KETU EXPLAINED</text>
+</svg>
