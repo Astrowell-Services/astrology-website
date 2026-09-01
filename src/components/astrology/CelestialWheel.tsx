@@ -22,30 +22,30 @@ export default function CelestialWheel({
   style = {},
 }: CelestialWheelProps) {
   const zodiacSymbols = [
-    { glyph: "♈", angle: 0, name: "Aries" },
-    { glyph: "♉", angle: 30, name: "Taurus" },
-    { glyph: "♊", angle: 60, name: "Gemini" },
-    { glyph: "♋", angle: 90, name: "Cancer" },
-    { glyph: "♌", angle: 120, name: "Leo" },
-    { glyph: "♍", angle: 150, name: "Virgo" },
-    { glyph: "♎", angle: 180, name: "Libra" },
-    { glyph: "♏", angle: 210, name: "Scorpio" },
-    { glyph: "♐", angle: 240, name: "Sagittarius" },
-    { glyph: "♑", angle: 270, name: "Capricorn" },
-    { glyph: "♒", angle: 300, name: "Aquarius" },
-    { glyph: "♓", angle: 330, name: "Pisces" },
+    { code: "I", name: "Mesha", angle: 0 },
+    { code: "II", name: "Vrishabha", angle: 30 },
+    { code: "III", name: "Mithuna", angle: 60 },
+    { code: "IV", name: "Karka", angle: 90 },
+    { code: "V", name: "Simha", angle: 120 },
+    { code: "VI", name: "Kanya", angle: 150 },
+    { code: "VII", name: "Tula", angle: 180 },
+    { code: "VIII", name: "Vrishchika", angle: 210 },
+    { code: "IX", name: "Dhanu", angle: 240 },
+    { code: "X", name: "Makara", angle: 270 },
+    { code: "XI", name: "Kumbha", angle: 300 },
+    { code: "XII", name: "Meena", angle: 330 },
   ];
 
   const planetaryGlyphs = [
-    { glyph: "☉", angle: 15, r: 180 }, // Sun
-    { glyph: "☽", angle: 75, r: 180 }, // Moon
-    { glyph: "♂", angle: 135, r: 180 }, // Mars
-    { glyph: "☿", angle: 195, r: 180 }, // Mercury
-    { glyph: "♃", angle: 255, r: 180 }, // Jupiter
-    { glyph: "♀", angle: 315, r: 180 }, // Venus
-    { glyph: "♄", angle: 45, r: 130 }, // Saturn
-    { glyph: "☊", angle: 165, r: 130 }, // Rahu
-    { glyph: "☋", angle: 285, r: 130 }, // Ketu
+    { label: "Su", angle: 15, r: 180 }, // Surya (Sun)
+    { label: "Mo", angle: 75, r: 180 }, // Chandra (Moon)
+    { label: "Ma", angle: 135, r: 180 }, // Mangal (Mars)
+    { label: "Me", angle: 195, r: 180 }, // Budha (Mercury)
+    { label: "Ju", angle: 255, r: 180 }, // Guru (Jupiter)
+    { label: "Ve", angle: 315, r: 180 }, // Shukra (Venus)
+    { label: "Sa", angle: 45, r: 130 }, // Shani (Saturn)
+    { label: "Ra", angle: 165, r: 130 }, // Rahu
+    { label: "Ke", angle: 285, r: 130 }, // Ketu
   ];
 
   return (
@@ -158,14 +158,14 @@ export default function CelestialWheel({
                 x={x}
                 y={y}
                 fill="#B68A3A"
-                fontSize="12"
+                fontSize="10"
                 fontFamily="serif"
                 textAnchor="middle"
                 dominantBaseline="central"
                 opacity="0.85"
                 transform={`rotate(${z.angle + 105}, ${x}, ${y})`}
               >
-                {z.glyph}
+                {z.code}
               </text>
             );
           })}
@@ -187,12 +187,12 @@ export default function CelestialWheel({
                   x={x}
                   y={y}
                   fill="#B68A3A"
-                  fontSize="10"
+                  fontSize="8"
                   textAnchor="middle"
                   dominantBaseline="central"
                   fontWeight="bold"
                 >
-                  {p.glyph}
+                  {p.label}
                 </text>
               </g>
             );
