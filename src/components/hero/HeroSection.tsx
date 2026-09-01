@@ -117,7 +117,7 @@ export default function HeroSection() {
           </div>
 
           <motion.div
-            className="relative w-full max-w-sm lg:max-w-md xl:max-w-lg mx-auto z-10 -translate-y-9"
+            className="relative w-full max-w-sm lg:max-w-md xl:max-w-lg mx-auto z-10 -translate-y-7"
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
