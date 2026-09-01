@@ -9,27 +9,21 @@ interface AstrologerPortraitProps {
 
 export default function AstrologerPortrait({ className = "" }: AstrologerPortraitProps) {
   return (
-    <div className={`relative ${className}`}>
-      {/* Decorative gold hairline corner brackets */}
-      <div className="absolute -inset-3 pointer-events-none z-20 hidden md:block" aria-hidden="true">
+    <div className={`relative w-full aspect-[3/4] max-h-[calc(100vh-120px)] mx-auto ${className}`}>
+      {/* Decorative gold hairline corner brackets — hidden on small screens, locked with 12px gap on desktop */}
+      <div className="absolute -inset-[12px] pointer-events-none z-30 hidden md:block" aria-hidden="true">
         {/* Top-left corner */}
-        <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-[#B68A3A] opacity-60" />
+        <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#B68A3A] opacity-90" />
         {/* Top-right corner */}
-        <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-[#B68A3A] opacity-60" />
+        <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#B68A3A] opacity-90" />
         {/* Bottom-left corner */}
-        <div className="absolute bottom-0 left-0 w-8 h-8 border-b border-l border-[#B68A3A] opacity-60" />
+        <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[#B68A3A] opacity-90" />
         {/* Bottom-right corner */}
-        <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-[#B68A3A] opacity-60" />
+        <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#B68A3A] opacity-90" />
       </div>
 
       {/* Main portrait container */}
-      <div
-        className="relative overflow-hidden bg-[#E8DEC8] shadow-[0_12px_40px_rgba(36,33,31,0.08)] border border-[#D9CFBD]"
-        style={{
-          aspectRatio: "3/4",
-          maxHeight: "calc(100vh - 120px)",
-        }}
-      >
+      <div className="relative w-full h-full overflow-hidden bg-[#E8DEC8] shadow-[0_12px_40px_rgba(36,33,31,0.08)] border border-[#D9CFBD]">
         {/* Real photo */}
         <Image
           src="/images/astrologer-sir.jpg"
