@@ -29,7 +29,7 @@ export default function YouTubeSection() {
   const [videoList, setVideoList] = useState<Video[]>(fallbackVideos);
 
   useEffect(() => {
-    fetch("/data/youtube-videos.json")
+    fetch(`/data/youtube-videos.json?t=${Date.now()}`, { cache: "no-store" })
       .then((res) => {
         if (!res.ok) throw new Error("Failed to load JSON");
         return res.json();
