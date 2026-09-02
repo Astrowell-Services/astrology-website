@@ -15,7 +15,7 @@ export const astrologer = {
     "Every consultation begins with a careful study of the birth chart. No generic readings. No sweeping generalisations. Each chart tells a unique story that deserves to be heard.",
   stats: {
     consultations: "10,000+",
-    experience: "[X]+ Years",
+    experience: "28+ Years",
     countries: "40+",
     rating: "4.9",
   },

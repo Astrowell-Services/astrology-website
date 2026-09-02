@@ -1,9 +1,10 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Play, PlaySquare } from "lucide-react";
-import { videos } from "@/data/videos";
+import { videos as fallbackVideos, Video } from "@/data/videos";
 import PlanetaryOrbit from "@/components/astrology/PlanetaryOrbit";
 
 const containerVariants = {
@@ -16,7 +17,52 @@ const cardVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+interface JsonVideo {
+  id: string;
+  url: string;
+  title: string;
+  publishedAt?: string;
+  thumbnail?: string;
+}
+
 export default function YouTubeSection() {
+  const [videoList, setVideoList] = useState<Video[]>(fallbackVideos);
+
+  useEffect(() => {
+    fetch("/data/youtube-videos.json")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to load JSON");
+        return res.json();
+      })
+      .then((data) => {
+        if (data && Array.isArray(data.videos) && data.videos.length > 0) {
+          const mapped: Video[] = data.videos.map((v: JsonVideo) => {
+            let formattedDate = "Recent Upload";
+            if (v.publishedAt) {
+              const d = new Date(v.publishedAt);
+              formattedDate = d.toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              });
+            }
+            return {
+              id: v.id,
+              title: v.title,
+              duration: "HD Video",
+              thumbnail: v.thumbnail || `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`,
+              youtubeUrl: v.url || `https://www.youtube.com/watch?v=${v.id}`,
+              uploadDate: formattedDate,
+            };
+          });
+          setVideoList(mapped);
+        }
+      })
+      .catch((err) => {
+        console.warn("[YouTubeSection] Loading fallback videos:", err.message);
+      });
+  }, []);
+
   return (
     <section
       id="youtube"
@@ -47,7 +93,9 @@ export default function YouTubeSection() {
           </div>
 
           <a
-            href="#"
+            href="https://www.youtube.com/@AstronamaAchariyaDebdutta"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 border border-[#632D3D] text-[#632D3D] hover:bg-[#632D3D] hover:text-[#FFFDF8] font-sans text-[0.75rem] font-semibold tracking-wider uppercase transition-all duration-200 shrink-0 self-start sm:self-auto"
             aria-label="View all videos on YouTube"
           >
@@ -64,7 +112,7 @@ export default function YouTubeSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
         >
-          {videos.map((video) => (
+          {videoList.map((video) => (
             <motion.article
               key={video.id}
               className="group cursor-pointer flex flex-col"

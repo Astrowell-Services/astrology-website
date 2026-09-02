@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "update-youtube": "node scripts/update-youtube-videos.js"
   },
   "dependencies": {
     "framer-motion": "^13.1.1",

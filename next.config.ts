@@ -4,7 +4,16 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: false,
     dangerouslyAllowSVG: true,
-    remotePatterns: [],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+      },
+      {
+        protocol: "https",
+        hostname: "i.ytimg.com",
+      },
+    ],
   },
   typescript: {
     ignoreBuildErrors: false,

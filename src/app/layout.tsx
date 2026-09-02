@@ -49,7 +49,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${manrope.variable}`}>
+    <html
+      lang="en"
+      className={`${cormorant.variable} ${manrope.variable}`}
+      data-scroll-behavior="smooth"
+    >
       <body className="bg-primary text-primary antialiased">
         <Header />
         <main>{children}</main>
