@@ -70,13 +70,13 @@ export default function HeroSection() {
               <span>BOOK A CONSULTATION</span>
               <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
-            <Link
-              href="#services"
+            <a
+              href="tel:+919831421490"
               id="hero-cta-secondary"
               className="btn-secondary"
             >
-              EXPLORE SERVICES
-            </Link>
+              CALL CONSULTANT
+            </a>
           </motion.div>
 
           {/* Social Proof */}

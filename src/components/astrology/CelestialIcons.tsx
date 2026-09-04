@@ -1,8 +1,6 @@
 "use client";
 
-// Reusable inline SVG celestial decorations used throughout the site.
-// All use low-opacity gold/brown linework and are designed to disappear
-// or simplify gracefully on small screens.
+import React from "react";
 
 export function KundliGeometry({ className = "" }: { className?: string }) {
   return (
@@ -13,11 +11,8 @@ export function KundliGeometry({ className = "" }: { className?: string }) {
       className={className}
       aria-hidden="true"
     >
-      {/* Outer circle */}
       <circle cx="200" cy="200" r="190" stroke="#B68A3A" strokeWidth="0.5" strokeOpacity="0.35" />
-      {/* Inner circle */}
       <circle cx="200" cy="200" r="140" stroke="#B68A3A" strokeWidth="0.5" strokeOpacity="0.25" />
-      {/* Square rotated 45deg (diamond) */}
       <rect
         x="60"
         y="60"
@@ -28,19 +23,13 @@ export function KundliGeometry({ className = "" }: { className?: string }) {
         strokeOpacity="0.2"
         transform="rotate(45 200 200)"
       />
-      {/* Cross lines */}
       <line x1="200" y1="10" x2="200" y2="390" stroke="#B68A3A" strokeWidth="0.4" strokeOpacity="0.15" />
       <line x1="10" y1="200" x2="390" y2="200" stroke="#B68A3A" strokeWidth="0.4" strokeOpacity="0.15" />
-      {/* Diagonal lines */}
       <line x1="60" y1="60" x2="340" y2="340" stroke="#B68A3A" strokeWidth="0.4" strokeOpacity="0.12" />
       <line x1="340" y1="60" x2="60" y2="340" stroke="#B68A3A" strokeWidth="0.4" strokeOpacity="0.12" />
-      {/* Small dot at center */}
       <circle cx="200" cy="200" r="3" fill="#B68A3A" fillOpacity="0.3" />
-      {/* Orbital ring 1 */}
       <ellipse cx="200" cy="200" rx="170" ry="60" stroke="#B68A3A" strokeWidth="0.4" strokeOpacity="0.1" transform="rotate(30 200 200)" />
-      {/* Orbital ring 2 */}
       <ellipse cx="200" cy="200" rx="170" ry="60" stroke="#B68A3A" strokeWidth="0.4" strokeOpacity="0.1" transform="rotate(-30 200 200)" />
-      {/* Small planet dots */}
       <circle cx="200" cy="30" r="2.5" fill="#B68A3A" fillOpacity="0.4" />
       <circle cx="370" cy="200" r="2" fill="#B68A3A" fillOpacity="0.3" />
       <circle cx="90" cy="110" r="1.5" fill="#B68A3A" fillOpacity="0.3" />
@@ -173,6 +162,46 @@ export function KundliSymbol({ className = "" }: { className?: string }) {
   );
 }
 
+export function GemstoneSymbol({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden="true">
+      <path d="M9 5L23 5L28 13L16 28L4 13L9 5Z" stroke="#B68A3A" strokeWidth="1.4" strokeLinejoin="round" />
+      <line x1="4" y1="13" x2="28" y2="13" stroke="#B68A3A" strokeWidth="1" strokeOpacity="0.6" />
+      <line x1="9" y1="5" x2="16" y2="28" stroke="#B68A3A" strokeWidth="1" strokeOpacity="0.5" />
+      <line x1="23" y1="5" x2="16" y2="28" stroke="#B68A3A" strokeWidth="1" strokeOpacity="0.5" />
+    </svg>
+  );
+}
+
+export function SacredPujaSymbol({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden="true">
+      {/* Diya Lamp Base */}
+      <path d="M5 19C5 25 10 27 16 27C22 27 27 25 27 19H5Z" stroke="#B68A3A" strokeWidth="1.4" />
+      <path d="M16 5C14 9 12 11 12 15C12 17.5 13.8 19 16 19C18.2 19 20 17.5 20 15C20 11 18 9 16 5Z" fill="#B68A3A" fillOpacity="0.25" stroke="#B68A3A" strokeWidth="1.2" />
+    </svg>
+  );
+}
+
+export function PhoneConsultSymbol({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden="true">
+      <circle cx="16" cy="16" r="12" stroke="#B68A3A" strokeWidth="1.2" strokeDasharray="3 3" />
+      <path d="M11 9C11 8.44772 11.4477 8 12 8H14.5C14.9458 8 15.3283 8.29342 15.4518 8.72151L16.2018 11.3215C16.3533 11.8465 16.1437 12.4116 15.691 12.7032L14.4 13.5333C15.3523 15.5414 16.9586 17.1477 18.9667 18.1L19.7968 16.809C20.0884 16.3563 20.6535 16.1467 21.1785 16.2982L23.7785 17.0482C24.2066 17.1717 24.5 17.5542 24.5 18V20.5C24.5 21.0523 24.0523 21.5 23.5 21.5C16.5964 21.5 11 15.9036 11 9Z" stroke="#B68A3A" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+export function CollabSymbol({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden="true">
+      <circle cx="11" cy="12" r="4.5" stroke="#B68A3A" strokeWidth="1.3" />
+      <circle cx="21" cy="12" r="4.5" stroke="#B68A3A" strokeWidth="1.3" />
+      <path d="M5 25C5 21 8 19.5 11 19.5C13 19.5 14.5 20.2 16 21.5C17.5 20.2 19 19.5 21 19.5C24 19.5 27 21 27 25" stroke="#B68A3A" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function StarDiamond({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 20 20" fill="none" className={className} aria-hidden="true">
@@ -184,4 +213,3 @@ export function StarDiamond({ className = "" }: { className?: string }) {
     </svg>
   );
 }
-
