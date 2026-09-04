@@ -1,8 +1,15 @@
 {
   "channelId": "UCqDfG4lWZ5OJgJSc2XK7g4A",
   "channelHandle": "@AstronamaAchariyaDebdutta",
-  "lastUpdated": "2026-09-03T07:00:25.352Z",
+  "lastUpdated": "2026-09-04T07:04:44.575Z",
   "videos": [
+    {
+      "id": "p-cnof2l3tM",
+      "url": "https://www.youtube.com/watch?v=p-cnof2l3tM",
+      "title": "কুম্ভ রাশির সেপ্টেম্বর মাসের গ্রহের গোচর কেমন যাবে? #kumbharashifal",
+      "publishedAt": "2026-09-03T14:30:25+00:00",
+      "thumbnail": "https://img.youtube.com/vi/p-cnof2l3tM/hqdefault.jpg"
+    },
     {
       "id": "3F_y3X9M9eM",
       "url": "https://www.youtube.com/watch?v=3F_y3X9M9eM",
@@ -23,13 +30,6 @@
       "title": "40 দিনে 4 রাশির টাকার জোয়ার! Janmashtami 2026 Rashifal Bengali | Achariya Debdutta",
       "publishedAt": "2026-08-31T14:00:06+00:00",
       "thumbnail": "https://img.youtube.com/vi/NDS6VDsosGY/hqdefault.jpg"
-    },
-    {
-      "id": "e9v02GkKPlY",
-      "url": "https://www.youtube.com/watch?v=e9v02GkKPlY",
-      "title": "সাপ্তাহিক রাশিফল: এই সপ্তাহে 3 রাশির টাকার জোয়ার! Saptahik Rashifal 31 Aug to 06 September",
-      "publishedAt": "2026-08-29T14:00:06+00:00",
-      "thumbnail": "https://img.youtube.com/vi/e9v02GkKPlY/hqdefault.jpg"
     }
   ]
 }
