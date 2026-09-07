@@ -28,7 +28,7 @@ export default function ConsultationClientPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#F7F3EA] text-[#24211F]">
+    <div className="min-h-screen bg-[#F7F3EA] text-[#24211F]">
       {/* 1. Hero Section */}
       <ConsultationHero onBookClick={() => handleOpenBooking()} />
 
@@ -56,6 +56,6 @@ export default function ConsultationClientPage() {
         onClose={handleCloseBooking}
         selectedPackage={selectedPkg}
       />
-    </main>
+    </div>
   );
 }
