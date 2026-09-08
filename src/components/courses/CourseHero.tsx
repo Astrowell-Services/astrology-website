@@ -22,7 +22,7 @@ export default function CourseHero({
   onRequestSyllabusClick,
 }: CourseHeroProps) {
   return (
-    <section className="relative pt-24 pb-14 sm:pt-28 sm:pb-18 lg:pt-15 lg:pb-20 overflow-hidden bg-gradient-to-b from-[#FFFDF8] via-[#F7F3EA] to-[#FFFDF8] border-b border-[#D9CFBD]">
+    <section className="relative pt-6 pb-12 sm:pt-10 sm:pb-16 lg:pt-14 lg:pb-20 overflow-hidden bg-gradient-to-b from-[#FFFDF8] via-[#F7F3EA] to-[#FFFDF8] border-b border-[#D9CFBD]">
       {/* Background Celestial Ambience */}
       <CelestialParticles density="low" />
 
@@ -39,10 +39,10 @@ export default function CourseHero({
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center justify-center gap-3 mb-4"
+            className="flex items-center justify-center gap-3 mb-3 sm:mb-4"
           >
             <span className="w-5 sm:w-8 h-px bg-[#B68A3A]/70" />
-            <span className="font-sans text-[0.7rem] sm:text-[0.74rem] tracking-[0.22em] uppercase font-bold text-[#B68A3A]">
+            <span className="font-sans text-[0.68rem] sm:text-[0.74rem] tracking-[0.22em] uppercase font-bold text-[#B68A3A]">
               Certified Vedic Astrology & Numerology
             </span>
             <span className="w-5 sm:w-8 h-px bg-[#B68A3A]/70" />
@@ -53,7 +53,7 @@ export default function CourseHero({
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#24211F] font-normal leading-[1.15] mb-5 tracking-tight"
+            className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#24211F] font-normal leading-[1.15] mb-3 sm:mb-5 tracking-tight"
           >
             Courses
           </motion.h1>
@@ -63,7 +63,7 @@ export default function CourseHero({
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="font-serif italic text-lg sm:text-xl lg:text-2xl text-[#632D3D] leading-relaxed mb-6 max-w-2xl mx-auto"
+            className="font-serif italic text-base sm:text-xl lg:text-2xl text-[#632D3D] leading-relaxed mb-4 sm:mb-6 max-w-2xl mx-auto"
           >
             &ldquo;Astrology is not superstition. It is the ancient science of understanding the influence of celestial bodies on human lives.&rdquo;
           </motion.blockquote>
@@ -73,7 +73,7 @@ export default function CourseHero({
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-sans text-[0.95rem] sm:text-base text-[#716B63] leading-relaxed max-w-xl mx-auto mb-8 font-normal"
+            className="font-sans text-[0.88rem] sm:text-base text-[#716B63] leading-relaxed max-w-xl mx-auto mb-6 sm:mb-8 font-normal"
           >
             Learn authentic Vedic Jyotish, Kundali Milan, Lal Kitab remedies, and Numerology with step-by-step guidance from Achariya Debdutta.
           </motion.p>
@@ -83,7 +83,7 @@ export default function CourseHero({
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-10"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-3.5 mb-6 sm:mb-10"
           >
             <button
               onClick={onExploreClick}
