@@ -9,9 +9,9 @@ import { astrologer } from "@/data/astrologer";
 import BrandLogoMark from "@/components/astrology/BrandLogoMark";
 
 const primaryNav = [
-  { label: "Reports", href: "/report/" },
-  { label: "Courses", href: "/courses/" },
   { label: "Call Consultant", href: "/book-astrology-consultation/" },
+  { label: "Courses", href: "/courses/" },
+  { label: "Reports", href: "/report/" },
   { label: "Horoscope", href: "/horoscope/" },
   { label: "Free Calculators", href: "/free-calculator/" },
   { label: "Blogs", href: "/blogs/" },
@@ -38,11 +38,10 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
             ? "bg-[#FFFDF8]/95 backdrop-blur-sm shadow-[0_1px_0_#D9CFBD]"
             : "bg-[#FFFDF8]/90 backdrop-blur-sm"
-        }`}
+          }`}
       >
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-18">
@@ -73,11 +72,10 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-3 py-2 font-sans text-[0.8rem] font-500 tracking-wide transition-colors duration-200 whitespace-nowrap ${
-                    pathname === item.href || pathname.startsWith(item.href)
+                  className={`px-3 py-2 font-sans text-[0.8rem] font-500 tracking-wide transition-colors duration-200 whitespace-nowrap ${pathname === item.href || pathname.startsWith(item.href)
                       ? "text-[#632D3D]"
                       : "text-[#24211F] hover:text-[#632D3D]"
-                  }`}
+                    }`}
                   style={{ fontWeight: 500 }}
                 >
                   {item.label}
@@ -123,11 +121,10 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-2.5 py-2 font-sans text-[0.75rem] font-500 tracking-wide transition-colors duration-200 whitespace-nowrap ${
-                    pathname === item.href
+                  className={`px-2.5 py-2 font-sans text-[0.75rem] font-500 tracking-wide transition-colors duration-200 whitespace-nowrap ${pathname === item.href
                       ? "text-[#632D3D]"
                       : "text-[#24211F] hover:text-[#632D3D]"
-                  }`}
+                    }`}
                   style={{ fontWeight: 500 }}
                 >
                   {item.label}

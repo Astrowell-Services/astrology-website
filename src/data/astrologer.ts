@@ -20,10 +20,10 @@ export const astrologer = {
     rating: "4.9",
   },
   contact: {
-    phone: "+91 98300786134",
+    phone: "+9198300786134",
     email: " astroachariyadebdutta@gmail.com",
     location: "Kolkata, West Bengal, India",
-    whatsapp: "+91 9831421490",
+    whatsapp: "+919831421490",
   },
   social: {
     instagram: "#",

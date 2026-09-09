@@ -47,26 +47,14 @@ export default function LimitedSlotsBanner({ onBookClick }: LimitedSlotsBannerPr
 
             {/* Button */}
             <div className="mb-8">
-              {onBookClick ? (
-                <button
-                  type="button"
-                  onClick={onBookClick}
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[#632D3D] hover:bg-[#4A1F2B] text-[#FFFDF8] font-sans text-sm font-semibold uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-lg cursor-pointer"
-                  id="limited-slots-book-btn"
-                >
-                  <PhoneCall size={16} />
-                  <span>Book Call Now</span>
-                </button>
-              ) : (
-                <a
-                  href="tel:+919831421490"
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[#632D3D] hover:bg-[#4A1F2B] text-[#FFFDF8] font-sans text-sm font-semibold uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-lg"
-                  id="limited-slots-book-btn"
-                >
-                  <PhoneCall size={16} />
-                  <span>Book Call Now</span>
-                </a>
-              )}
+              <a
+                href="tel:+919831421490"
+                className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[#632D3D] hover:bg-[#4A1F2B] text-[#FFFDF8] font-sans text-sm font-semibold uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-lg"
+                id="limited-slots-book-btn"
+              >
+                <PhoneCall size={16} />
+                <span>Book Call Now</span>
+              </a>
             </div>
 
             {/* 4 Feature Badges with Lucide SVG icons (NO EMOJIS) */}

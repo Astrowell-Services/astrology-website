@@ -22,7 +22,7 @@ export default function CourseHero({
   onRequestSyllabusClick,
 }: CourseHeroProps) {
   return (
-    <section className="relative pt-6 pb-12 sm:pt-10 sm:pb-16 lg:pt-14 lg:pb-20 overflow-hidden bg-gradient-to-b from-[#FFFDF8] via-[#F7F3EA] to-[#FFFDF8] border-b border-[#D9CFBD]">
+    <section className="relative pt-6 pb-12 sm:pt-10 sm:pb-16 lg:pt-14 lg:pb-20 overflow-hidden bg-[#F7F3EA] border-b border-[#D9CFBD]">
       {/* Background Celestial Ambience */}
       <CelestialParticles density="low" />
 

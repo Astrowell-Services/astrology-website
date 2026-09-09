@@ -57,10 +57,17 @@ export default function WhyLearnAstrology() {
           </p>
         </div>
 
-        {/* 5 Open Floating Benefits */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
+        {/* 5 Open Floating Benefits: 3 in Row 1, 2 centered in Row 2 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 sm:gap-8 max-w-5xl mx-auto">
           {whyLearnPoints.map((point, index) => {
             const Icon = point.icon;
+            const spanClass =
+              index < 3
+                ? "md:col-span-1 lg:col-span-2"
+                : index === 3
+                ? "md:col-span-1 lg:col-span-2 lg:col-start-2"
+                : "md:col-span-2 md:max-w-md md:mx-auto w-full lg:col-span-2 lg:max-w-none";
+
             return (
               <motion.div
                 key={index}
@@ -68,9 +75,7 @@ export default function WhyLearnAstrology() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
-                className={`flex items-start gap-3.5 p-4 rounded-xs hover:bg-[#F7F3EA]/50 transition-colors ${
-                  index === 4 ? "md:col-span-2 lg:col-span-1" : ""
-                }`}
+                className={`flex items-start gap-3.5 p-4 rounded-xs hover:bg-[#F7F3EA]/50 transition-colors ${spanClass}`}
               >
                 <div className="w-9 h-9 rounded-full bg-[#F7F3EA] border border-[#D9CFBD] flex items-center justify-center shrink-0 text-[#B68A3A]">
                   <Icon className="w-4.5 h-4.5" />

@@ -48,22 +48,28 @@ export default function WhyChooseTelephonic() {
           </span>
         </div>
 
-        {/* 5 Unique Hallmark Cards */}
+        {/* 5 Unique Hallmark Cards: 3 in Row 1, 2 centered in Row 2 */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 max-w-5xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          {whyChooseBenefits.map((benefit, idx) => (
-            <motion.div
-              key={benefit.id}
-              variants={itemVariants}
-              className={`p-6 bg-[#F7F3EA]/70 border border-[#D9CFBD] transition-all duration-300 hover:border-[#B68A3A] hover:bg-[#FFFDF8] shadow-xs group ${
-                idx === 4 ? "md:col-span-2 lg:col-span-1" : ""
-              }`}
-            >
+          {whyChooseBenefits.map((benefit, idx) => {
+            const spanClass =
+              idx < 3
+                ? "md:col-span-1 lg:col-span-2"
+                : idx === 3
+                ? "md:col-span-1 lg:col-span-2 lg:col-start-2"
+                : "md:col-span-2 md:max-w-md md:mx-auto w-full lg:col-span-2 lg:max-w-none";
+
+            return (
+              <motion.div
+                key={benefit.id}
+                variants={itemVariants}
+                className={`p-6 bg-[#F7F3EA]/70 border border-[#D9CFBD] transition-all duration-300 hover:border-[#B68A3A] hover:bg-[#FFFDF8] shadow-xs group ${spanClass}`}
+              >
               <div className="flex items-start gap-4">
                 <div className="shrink-0 mt-1">
                   {iconMap[benefit.iconName] || <CheckCircle2 className="w-6 h-6 text-[#B68A3A]" />}
@@ -75,10 +81,11 @@ export default function WhyChooseTelephonic() {
                   <p className="font-sans text-[0.84rem] text-[#716B63] leading-relaxed">
                     {benefit.description}
                   </p>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </motion.div>
 
       </div>

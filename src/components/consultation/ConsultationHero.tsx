@@ -1,28 +1,15 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { PhoneCall, Tag, ShieldCheck, Clock, Award } from "lucide-react";
+import { PhoneCall, ShieldCheck, Clock, Award, MessageSquare } from "lucide-react";
 import AstrologerPortrait from "@/components/hero/AstrologerPortrait";
 import CelestialParticles from "@/components/astrology/CelestialParticles";
 import CelestialWheel from "@/components/astrology/CelestialWheel";
 
-interface ConsultationHeroProps {
-  onBookClick?: () => void;
-}
-
-export default function ConsultationHero({ onBookClick }: ConsultationHeroProps) {
-  const scrollToPricing = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const el = document.getElementById("call-packages");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
+export default function ConsultationHero() {
   return (
-    <section className="relative min-h-[85vh] lg:min-h-[90vh] flex items-center pt-24 pb-16 lg:pt-10 lg:pb-24 overflow-hidden bg-gradient-to-b from-[#FFFDF8] via-[#F7F3EA] to-[#FFFDF8]">
+    <section className="relative min-h-[85vh] lg:min-h-[90vh] flex items-center pt-24 pb-16 lg:pt-10 lg:pb-24 overflow-hidden bg-[#F7F3EA]">
       {/* Background Celestial Ambience */}
       <CelestialParticles density="low" />
 
@@ -42,7 +29,6 @@ export default function ConsultationHero({ onBookClick }: ConsultationHeroProps)
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
 
-
             {/* Main Title */}
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-[3.25rem] text-[#24211F] font-normal leading-[1.15] mb-6 tracking-tight">
               Call Consultation With <br className="hidden sm:inline" />
@@ -56,36 +42,24 @@ export default function ConsultationHero({ onBookClick }: ConsultationHeroProps)
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
-              <Link
-                href="#call-packages"
-                onClick={scrollToPricing}
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-[#FFFDF8] border border-[#B68A3A] text-[#24211F] hover:bg-[#B68A3A]/10 hover:border-[#632D3D] font-sans text-[0.84rem] font-semibold uppercase tracking-wider transition-all duration-200 shadow-xs group"
-                id="hero-view-pricing-btn"
+              <a
+                href="tel:+919831421490"
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-[#632D3D] hover:bg-[#4A1F2B] text-[#FFFDF8] font-sans text-[0.84rem] font-semibold uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
+                id="hero-book-call-btn"
               >
-                <Tag size={15} className="text-[#B68A3A] group-hover:text-[#632D3D] transition-colors" />
-                <span>View Pricing</span>
-              </Link>
+                <PhoneCall size={15} />
+                <span>Call Consultant</span>
+              </a>
 
-              {onBookClick ? (
-                <button
-                  type="button"
-                  onClick={onBookClick}
-                  className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-[#632D3D] hover:bg-[#4A1F2B] text-[#FFFDF8] font-sans text-[0.84rem] font-semibold uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
-                  id="hero-book-call-btn"
-                >
-                  <PhoneCall size={15} />
-                  <span>Book call Consultant</span>
-                </button>
-              ) : (
-                <a
-                  href="tel:+919831421490"
-                  className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-[#632D3D] hover:bg-[#4A1F2B] text-[#FFFDF8] font-sans text-[0.84rem] font-semibold uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md"
-                  id="hero-book-call-btn"
-                >
-                  <PhoneCall size={15} />
-                  <span>Book call Consultant</span>
-                </a>
-              )}
+              <a
+                href="https://wa.me/919831421490?text=Hello%20Achariya%20Debdutta,%20I%20would%20like%20to%20inquire%20about%20a%20telephonic%20astrology%20consultation."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-[#FFFDF8] border border-[#25D366] text-[#24211F] hover:bg-[#25D366]/10 font-sans text-[0.84rem] font-semibold uppercase tracking-wider transition-all duration-200 shadow-xs cursor-pointer"
+              >
+                <MessageSquare size={15} className="text-[#25D366]" />
+                <span>WhatsApp Inquiry</span>
+              </a>
             </div>
 
             {/* Trust Badges — Clean Lucide SVGs, strictly NO emojis */}

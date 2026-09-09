@@ -41,22 +41,28 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        {/* 5-Step Cards Grid */}
+        {/* 5-Step Cards Grid: 3 cards in Row 1, 2 centered cards in Row 2 */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 max-w-6xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          {consultationSteps.map((step, idx) => (
-            <motion.div
-              key={step.step}
-              variants={stepVariants}
-              className={`p-7 bg-[#FFFDF8] border border-[#D9CFBD] hover:border-[#B68A3A] transition-all duration-300 shadow-xs flex flex-col justify-between group ${
-                idx === 3 ? "lg:col-span-1" : idx === 4 ? "md:col-span-2 lg:col-span-2" : ""
-              }`}
-            >
+          {consultationSteps.map((step, idx) => {
+            const spanClass =
+              idx < 3
+                ? "md:col-span-1 lg:col-span-2"
+                : idx === 3
+                ? "md:col-span-1 lg:col-span-2 lg:col-start-2"
+                : "md:col-span-2 md:max-w-md md:mx-auto w-full lg:col-span-2 lg:max-w-none";
+
+            return (
+              <motion.div
+                key={step.step}
+                variants={stepVariants}
+                className={`p-7 bg-[#FFFDF8] border border-[#D9CFBD] hover:border-[#B68A3A] transition-all duration-300 shadow-xs flex flex-col justify-between group ${spanClass}`}
+              >
               <div>
                 {/* Step number and icon */}
                 <div className="flex items-center justify-between mb-5">
@@ -87,7 +93,8 @@ export default function HowItWorks() {
                 </span>
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </motion.div>
 
       </div>
