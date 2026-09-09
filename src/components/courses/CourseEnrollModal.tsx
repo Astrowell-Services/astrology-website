@@ -235,11 +235,11 @@ export default function CourseEnrollModal({
               </div>
 
               <a
-                href="tel:+919831421490"
+                href="tel:+9198300786134"
                 className="w-full py-2.5 px-4 bg-[#632D3D] hover:bg-[#4A1F2B] text-[#FFFDF8] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-xs"
               >
                 <Phone size={15} />
-                <span>Call Admissions (+91 9831421490)</span>
+                <span>Call Admissions (+9198300786134)</span>
               </a>
             </div>
 

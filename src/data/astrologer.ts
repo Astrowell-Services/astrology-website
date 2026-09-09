@@ -21,7 +21,7 @@ export const astrologer = {
   },
   contact: {
     phone: "+9198300786134",
-    email: " astroachariyadebdutta@gmail.com",
+    email: "astroachariyadebdutta@gmail.com",
     location: "Kolkata, West Bengal, India",
     whatsapp: "+919831421490",
   },
