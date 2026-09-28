@@ -25,7 +25,23 @@ interface JsonVideo {
   thumbnail?: string;
 }
 
-export default function YouTubeSection() {
+export interface YouTubeSectionProps {
+  id?: string;
+  eyebrow?: string | null;
+  title?: string;
+  subtitle?: string | null;
+  className?: string;
+  isInnerPage?: boolean;
+}
+
+export default function YouTubeSection({
+  id = "youtube",
+  eyebrow = "YOUTUBE UPDATES",
+  title = "Stay updated with our latest videos.",
+  subtitle = null,
+  className,
+  isInnerPage = false,
+}: YouTubeSectionProps = {}) {
   const [videoList, setVideoList] = useState<Video[]>(fallbackVideos);
 
   useEffect(() => {
@@ -63,10 +79,16 @@ export default function YouTubeSection() {
       });
   }, []);
 
+  const sectionClass =
+    className ||
+    (isInnerPage
+      ? "pt-8 sm:pt-12 lg:pt-16 pb-16 sm:pb-24 min-h-[75vh] bg-[#F7F3EA] relative overflow-hidden"
+      : "section-spacing bg-[#FFFDF8] relative overflow-hidden");
+
   return (
     <section
-      id="youtube"
-      className="section-spacing bg-[#FFFDF8] relative overflow-hidden"
+      id={id}
+      className={sectionClass}
       aria-labelledby="youtube-heading"
     >
       {/* Background celestial orbit linework */}
@@ -77,19 +99,33 @@ export default function YouTubeSection() {
       <div className="container-site relative z-10">
         {/* Header row matching reference layout */}
         <motion.div
-          className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-12"
+          initial={isInnerPage ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+          animate={isInnerPage ? { opacity: 1, y: 0 } : undefined}
+          whileInView={isInnerPage ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <div>
-            <p className="eyebrow mb-2">
-              YOUTUBE UPDATES
-            </p>
-            <h2 id="youtube-heading" className="section-title">
-              Stay updated with our latest videos.
-            </h2>
+            {eyebrow && (
+              <p className="eyebrow mb-2">
+                {eyebrow}
+              </p>
+            )}
+            {isInnerPage ? (
+              <h1 id="youtube-heading" className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#24211F] leading-tight">
+                {title}
+              </h1>
+            ) : (
+              <h2 id="youtube-heading" className="section-title">
+                {title}
+              </h2>
+            )}
+            {subtitle && (
+              <p className="font-sans text-[0.92rem] sm:text-base text-[#716B63] mt-2.5 max-w-2xl leading-relaxed">
+                {subtitle}
+              </p>
+            )}
           </div>
 
           <a
@@ -108,9 +144,10 @@ export default function YouTubeSection() {
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
+          initial={isInnerPage ? "visible" : "hidden"}
+          animate={isInnerPage ? "visible" : undefined}
+          whileInView={isInnerPage ? undefined : "visible"}
+          viewport={isInnerPage ? undefined : { once: true, margin: "-60px" }}
         >
           {videoList.map((video) => (
             <motion.article
