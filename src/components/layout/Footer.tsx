@@ -63,6 +63,8 @@ export default function Footer() {
                 <a
                   key={s.label}
                   href={s.href}
+                  target={s.href.startsWith("http") ? "_blank" : undefined}
+                  rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   aria-label={s.label}
                   className="flex items-center justify-center w-8 h-8 border border-[#D9CFBD] text-[#716B63] hover:text-[#632D3D] hover:border-[#632D3D] transition-colors duration-200"
                 >
@@ -168,7 +170,9 @@ export default function Footer() {
               </p>
               <a
                 href={astrologer.social.youtube}
-                className="flex items-center gap-2 font-sans text-[0.75rem] font-600 text-[#632D3D] hover:text-[#4A1F2B] transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-sans text-[0.75rem] font-600 text-[#632D3D] hover:text-[#4A1F2B] transition-colors"
               >
                 <PlaySquare size={14} />
                 Visit Channel
@@ -188,13 +192,13 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-5">
             <Link
-              href="#"
+              href="/privacy-policy/"
               className="font-sans text-[0.75rem] text-[#716B63] hover:text-[#632D3D] transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
-              href="#"
+              href="/terms-and-conditions/"
               className="font-sans text-[0.75rem] text-[#716B63] hover:text-[#632D3D] transition-colors"
             >
               Terms &amp; Conditions

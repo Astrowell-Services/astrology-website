@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, ChevronDown } from "lucide-react";
@@ -29,11 +29,38 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
 
+  const desktopDropdownRef = useRef<HTMLDivElement>(null);
+  const tabletDropdownRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
+      const insideDesktop = desktopDropdownRef.current?.contains(target);
+      const insideTablet = tabletDropdownRef.current?.contains(target);
+      if (!insideDesktop && !insideTablet) {
+        setMoreOpen(false);
+      }
+    };
+
+    if (moreOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [moreOpen]);
+
+  // Close dropdown on route transition
+  useEffect(() => {
+    setMoreOpen(false);
+  }, [pathname]);
 
   return (
     <>
@@ -83,11 +110,11 @@ export default function Header() {
               ))}
 
               {/* More dropdown */}
-              <div className="relative">
+              <div className="relative" ref={desktopDropdownRef}>
                 <button
-                  onClick={() => setMoreOpen(!moreOpen)}
-                  onBlur={() => setTimeout(() => setMoreOpen(false), 150)}
-                  className="flex items-center gap-1 px-3 py-2 font-sans text-[0.8rem] font-500 text-[#24211F] hover:text-[#632D3D] transition-colors duration-200"
+                  type="button"
+                  onClick={() => setMoreOpen((prev) => !prev)}
+                  className="flex items-center gap-1 px-3 py-2 font-sans text-[0.8rem] font-500 text-[#24211F] hover:text-[#632D3D] transition-colors duration-200 cursor-pointer"
                   style={{ fontWeight: 500 }}
                   aria-expanded={moreOpen}
                   aria-haspopup="true"
@@ -105,6 +132,7 @@ export default function Header() {
                       <Link
                         key={item.href}
                         href={item.href}
+                        onClick={() => setMoreOpen(false)}
                         className="block px-5 py-3 font-sans text-[0.8rem] text-[#24211F] hover:text-[#632D3D] hover:bg-[#F7F3EA] transition-colors duration-150 border-b border-[#D9CFBD] last:border-b-0"
                       >
                         {item.label}
@@ -132,11 +160,11 @@ export default function Header() {
               ))}
 
               {/* More dropdown for tablet */}
-              <div className="relative">
+              <div className="relative" ref={tabletDropdownRef}>
                 <button
-                  onClick={() => setMoreOpen(!moreOpen)}
-                  onBlur={() => setTimeout(() => setMoreOpen(false), 150)}
-                  className="flex items-center gap-1 px-2.5 py-2 font-sans text-[0.75rem] text-[#24211F] hover:text-[#632D3D] transition-colors duration-200"
+                  type="button"
+                  onClick={() => setMoreOpen((prev) => !prev)}
+                  className="flex items-center gap-1 px-2.5 py-2 font-sans text-[0.75rem] text-[#24211F] hover:text-[#632D3D] transition-colors duration-200 cursor-pointer"
                   style={{ fontWeight: 500 }}
                   aria-expanded={moreOpen}
                 >
@@ -150,6 +178,7 @@ export default function Header() {
                       <Link
                         key={item.href}
                         href={item.href}
+                        onClick={() => setMoreOpen(false)}
                         className="block px-5 py-3 font-sans text-[0.8rem] text-[#24211F] hover:text-[#632D3D] hover:bg-[#F7F3EA] transition-colors border-b border-[#D9CFBD] last:border-b-0"
                       >
                         {item.label}

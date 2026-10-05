@@ -100,7 +100,7 @@ export default function YouTubeSection({
         {/* Header row matching reference layout */}
         <motion.div
           className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-12"
-          initial={isInnerPage ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={isInnerPage ? { opacity: 1, y: 0 } : undefined}
           whileInView={isInnerPage ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -144,7 +144,7 @@ export default function YouTubeSection({
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           variants={containerVariants}
-          initial={isInnerPage ? "visible" : "hidden"}
+          initial="hidden"
           animate={isInnerPage ? "visible" : undefined}
           whileInView={isInnerPage ? undefined : "visible"}
           viewport={isInnerPage ? undefined : { once: true, margin: "-60px" }}

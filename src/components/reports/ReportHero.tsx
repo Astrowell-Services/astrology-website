@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { MessageCircle, FileText, CheckCircle2, ShieldCheck, Clock, Award } from "lucide-react";
 import { astrologer } from "@/data/astrologer";
 
@@ -17,28 +18,48 @@ export default function ReportHero({ onExploreClick }: ReportHeroProps) {
       <div className="container-site relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#B68A3A]/40 bg-[#FFFDF8] shadow-xs mb-5">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#B68A3A]/40 bg-[#FFFDF8] shadow-xs mb-5"
+          >
             <Award size={14} className="text-[#B68A3A]" />
             <span className="font-sans text-[0.7rem] uppercase tracking-[0.2em] font-600 text-[#632D3D]">
               Handcrafted Vedic Dossiers
             </span>
-          </div>
+          </motion.div>
 
           {/* Headline */}
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#24211F] leading-tight sm:leading-snug mb-5">
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.08 }}
+            className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#24211F] leading-tight sm:leading-snug mb-5"
+          >
             In-Depth Astrological Reports <br className="hidden sm:inline" />
             <span className="italic text-[#632D3D] font-normal">Hand-Analyzed by Acharya Debdutta</span>
-          </h1>
+          </motion.h1>
 
           {/* Subheading */}
-          <p className="font-sans text-[0.95rem] sm:text-base text-[#716B63] max-w-2xl mx-auto leading-relaxed mb-8">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.16 }}
+            className="font-sans text-[0.95rem] sm:text-base text-[#716B63] max-w-2xl mx-auto leading-relaxed mb-8"
+          >
             Unlike generic computer-generated printouts, every dossier is personally computed,
             cross-verified across divisional charts (D1, D9, D10), and accompanied by time-tested
             Vedic &amp; Lal Kitab remedial prescriptions.
-          </p>
+          </motion.p>
 
           {/* Action CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 mb-10">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.24 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 mb-10"
+          >
             <a
               href="#reports-catalog"
               onClick={(e) => {
@@ -64,7 +85,7 @@ export default function ReportHero({ onExploreClick }: ReportHeroProps) {
               <MessageCircle size={16} />
               <span>Inquire on WhatsApp</span>
             </a>
-          </div>
+          </motion.div>
 
           {/* Trust Highlights Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-[#D9CFBD]/80">

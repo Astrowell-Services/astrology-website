@@ -27,8 +27,8 @@ export const astrologer = {
   },
   social: {
     instagram: "#",
-    youtube: "#",
+    youtube: "https://www.youtube.com/@AstronamaAchariyaDebdutta",
     facebook: "#",
-    whatsapp: "#",
+    whatsapp: "https://wa.me/919831421490",
   },
 };

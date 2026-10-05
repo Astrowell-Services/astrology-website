@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Search, Sparkles, BookOpen } from "lucide-react";
 import { blogCategories } from "@/data/blogs";
 
@@ -23,26 +24,46 @@ export default function BlogHero({
 
       <div className="container-site relative z-10 max-w-4xl mx-auto text-center">
         {/* Eyebrow Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#B68A3A]/40 bg-[#FFFDF8] shadow-xs mb-5">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#B68A3A]/40 bg-[#FFFDF8] shadow-xs mb-5"
+        >
           <BookOpen size={14} className="text-[#B68A3A]" />
           <span className="font-sans text-[0.7rem] uppercase tracking-[0.2em] font-600 text-[#632D3D]">
             Vedic Essays &amp; Astronomical Insights
           </span>
-        </div>
+        </motion.div>
 
         {/* Headline */}
-        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#24211F] leading-tight mb-4">
+        <motion.h1
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.08 }}
+          className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#24211F] leading-tight mb-4"
+        >
           The Vedic Astrology Journal
-        </h1>
+        </motion.h1>
 
         {/* Subtitle */}
-        <p className="font-sans text-[0.95rem] sm:text-base text-[#716B63] max-w-2xl mx-auto leading-relaxed mb-8">
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.16 }}
+          className="font-sans text-[0.95rem] sm:text-base text-[#716B63] max-w-2xl mx-auto leading-relaxed mb-8"
+        >
           Timeless classical wisdom, planetary transit analyses, and practical remedial guidance
           written to demystify cosmic cycles for conscious everyday living.
-        </p>
+        </motion.p>
 
         {/* Search Bar */}
-        <div className="max-w-xl mx-auto mb-8 relative">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.24 }}
+          className="max-w-xl mx-auto mb-8 relative"
+        >
           <div className="relative flex items-center">
             <Search
               size={18}
@@ -56,7 +77,7 @@ export default function BlogHero({
               className="w-full bg-[#FFFDF8] border border-[#D9CFBD] pl-11 pr-4 py-3 text-sm text-[#24211F] placeholder-[#A0988A] focus:outline-hidden focus:border-[#632D3D] shadow-xs transition-colors"
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* Category Pills */}
         <div className="flex flex-wrap items-center justify-center gap-2">

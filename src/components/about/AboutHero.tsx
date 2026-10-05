@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { MessageCircle, Phone, Award, Compass, Globe, Users } from "lucide-react";
 import { astrologer } from "@/data/astrologer";
 
@@ -14,7 +15,12 @@ export default function AboutHero() {
       <div className="container-site relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column: Narrative & Credentials */}
-          <div className="lg:col-span-7 flex flex-col items-start">
+          <motion.div
+            className="lg:col-span-7 flex flex-col items-start"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             {/* Eyebrow Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#B68A3A]/40 bg-[#FFFDF8] shadow-xs mb-5">
               <Award size={14} className="text-[#B68A3A]" />
@@ -114,10 +120,15 @@ export default function AboutHero() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: Master Portrait */}
-          <div className="lg:col-span-5 flex justify-center">
+          <motion.div
+            className="lg:col-span-5 flex justify-center"
+            initial={{ opacity: 0, scale: 0.97 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+          >
             <div className="relative w-full max-w-sm sm:max-w-md">
               {/* Decorative background border frame */}
               <div className="absolute inset-0 translate-x-3 translate-y-3 border border-[#B68A3A]/40 pointer-events-none" />
@@ -150,7 +161,7 @@ export default function AboutHero() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

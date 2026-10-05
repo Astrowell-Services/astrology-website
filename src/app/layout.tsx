@@ -20,26 +20,61 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://acharyadebdutta.com"),
   title: {
-    default: "Acharya Debdutta | Vedic Astrologer",
+    default: "Acharya Debdutta | Vedic Astrologer — Personalised Guidance",
     template: "%s | Acharya Debdutta",
   },
   description:
-    "Personalised Vedic astrology guidance for relationships, career, finance and life's important decisions by Acharya Debdutta.",
+    "Personalised Vedic astrology guidance for relationships, career, finance and life's important decisions by Acharya Debdutta with 28+ years of classical expertise.",
   keywords: [
-    "Vedic astrologer",
+    "Best Vedic Astrologer in Kolkata",
     "Kundali analysis",
-    "Vedic astrology",
-    "birth chart",
-    "astrology consultation",
-    "horoscope",
+    "Vedic astrology consultation",
+    "Horoscope predictions Kolkata",
+    "Lal Kitab remedies",
+    "Name correction numerology",
+    "Online Vedic puja services",
+    "Astrology courses Kolkata",
+    "Acharya Debdutta",
   ],
+  alternates: {
+    canonical: "./",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     type: "website",
-    siteName: "Acharya Debdutta",
+    locale: "en_IN",
+    url: "https://acharyadebdutta.com",
+    siteName: "Acharya Debdutta | Vedic Astrology",
+    title: "Acharya Debdutta | Vedic Astrologer — Personalised Guidance",
+    description:
+      "Classical Vedic Jyotish guidance for career, marriage, finance, and life decisions with 28+ years of dedicated practice.",
+    images: [
+      {
+        url: "/images/astrologer-sir.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Acharya Debdutta - Master Vedic Astrologer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
     title: "Acharya Debdutta | Vedic Astrologer",
     description:
-      "Personalised Vedic astrology guidance for relationships, career, finance and life's important decisions.",
+      "Classical Vedic Jyotish guidance for relationships, career, and life decisions.",
+    images: ["/images/astrologer-sir.jpg"],
   },
 };
 

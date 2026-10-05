@@ -6,6 +6,8 @@ import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { testimonials } from "@/data/testimonials";
 import CelestialParticles from "@/components/astrology/CelestialParticles";
 
+const AVATAR_COLORS = ["#632D3D", "#8B5D43", "#7C8370", "#4A5260", "#96653E", "#5B3A48"];
+
 export default function TestimonialsSection() {
   const [current, setCurrent] = useState(0);
   const total = testimonials.length;
@@ -91,7 +93,7 @@ export default function TestimonialsSection() {
                 <div className="flex items-center gap-3 pt-4 border-t border-[#D9CFBD]">
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center font-sans text-[0.72rem] font-semibold text-[#FFFDF8] shrink-0"
-                    style={{ backgroundColor: i === 0 ? "#632D3D" : i === 1 ? "#8B5D43" : "#7C8370" }}
+                    style={{ backgroundColor: AVATAR_COLORS[(current + i) % AVATAR_COLORS.length] }}
                   >
                     {t.initials}
                   </div>
@@ -141,7 +143,7 @@ export default function TestimonialsSection() {
               <div className="flex items-center gap-3 pt-4 border-t border-[#D9CFBD]">
                 <div
                   className="w-9 h-9 rounded-full flex items-center justify-center font-sans text-[0.7rem] font-semibold text-[#FFFDF8]"
-                  style={{ backgroundColor: "#632D3D" }}
+                  style={{ backgroundColor: AVATAR_COLORS[current % AVATAR_COLORS.length] }}
                 >
                   {testimonials[current].initials}
                 </div>
