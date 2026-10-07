@@ -10,19 +10,20 @@ import YouTubeSection from "@/components/youtube/YouTubeSection";
 
 import { astrologer } from "@/data/astrologer";
 import { faqs } from "@/data/faqs";
+import { SITE_URL } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "Acharya Debdutta | Best Vedic Astrologer in Kolkata — Personalised Guidance",
   description:
     "Personalised Vedic astrology guidance for relationships, career, finance, and life's important decisions. 28+ years experience in Parasara & Jaimini Jyotish. Book a consultation.",
   alternates: {
-    canonical: "https://acharyadebdutta.com",
+    canonical: "./",
   },
   openGraph: {
     title: "Acharya Debdutta | Best Vedic Astrologer in Kolkata",
     description:
       "Personalised Vedic astrology guidance for relationships, career, finance and life's important decisions.",
-    url: "https://acharyadebdutta.com",
+    url: SITE_URL,
     images: [
       {
         url: "/images/astrologer-sir.jpg",
@@ -40,8 +41,8 @@ export default function HomePage() {
     "@type": "ProfessionalService",
     name: "Acharya Debdutta - Vedic Astrologer",
     alternateName: "Astroacharya Debdutta Kolkata",
-    image: "https://acharyadebdutta.com/images/astrologer-sir.jpg",
-    url: "https://acharyadebdutta.com",
+    image: `${SITE_URL}/images/astrologer-sir.jpg`,
+    url: SITE_URL,
     telephone: astrologer.contact.phone,
     priceRange: "₹₹",
     address: {

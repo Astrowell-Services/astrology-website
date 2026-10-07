@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { SITE_URL } from "@/lib/siteConfig";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -20,7 +21,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://acharyadebdutta.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Acharya Debdutta | Vedic Astrologer — Personalised Guidance",
     template: "%s | Acharya Debdutta",
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://acharyadebdutta.com",
+    url: SITE_URL,
     siteName: "Acharya Debdutta | Vedic Astrology",
     title: "Acharya Debdutta | Vedic Astrologer — Personalised Guidance",
     description:

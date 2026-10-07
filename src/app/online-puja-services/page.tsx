@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PujaClientPage from "./PujaClientPage";
+import { SITE_URL } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "Online Vedic Puja & Hawan Services | Navagraha, Maha Mrityunjaya & Dosha Shanti | Acharya Debdutta",
@@ -14,11 +15,14 @@ export const metadata: Metadata = {
     "Live Vedic puja broadcast",
     "Acharya Debdutta puja services",
   ],
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     title: "Online Vedic Puja & Hawan Services | Acharya Debdutta",
     description:
       "Strict scriptural rituals performed by learned Sanskrit scholars under Acharya Debdutta's guidance. Live interactive streaming and Prasad home delivery.",
-    url: "https://acharyadebdutta.com/online-puja-services",
+    url: `${SITE_URL}/online-puja-services`,
     images: [
       {
         url: "/images/astrologer-sir.jpg",

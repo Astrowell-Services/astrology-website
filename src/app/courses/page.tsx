@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CoursesClientPage from "./CoursesClientPage";
 import { detailedCourses } from "@/data/courses";
+import { SITE_URL } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "Certified Online Courses in Vedic Astrology & Numerology | Achariya Debdutta",
@@ -17,11 +18,14 @@ export const metadata: Metadata = {
     "Best astrologer for online consultation",
     "Achariya Debdutta courses",
   ],
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     title: "Certified Online Courses in Vedic Astrology & Numerology | Achariya Debdutta",
     description:
       "Master Vedic Astrology, Vivah Milan, Lal Kitab, and Numerology with expert mentorship from Achariya Debdutta. Live classes, verified certifications, and complete reference study materials.",
-    url: "https://acharyadebdutta.com/courses",
+    url: `${SITE_URL}/courses`,
     images: [
       {
         url: "/images/astrologer-sir.jpg",
@@ -44,7 +48,7 @@ export default function CoursesPage() {
       "@type": "Person",
       name: "Achariya Debdutta",
       jobTitle: "Master Vedic Astrologer & Mentor",
-      image: "https://acharyadebdutta.com/images/astrologer-sir.jpg",
+      image: `${SITE_URL}/images/astrologer-sir.jpg`,
       telephone: "+9198300786134",
     },
     educationalCredentialAwarded: "Certificate of Completion",

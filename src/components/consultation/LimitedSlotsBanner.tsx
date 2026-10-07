@@ -75,7 +75,7 @@ export default function LimitedSlotsBanner({ onBookClick }: LimitedSlotsBannerPr
                   <Languages size={16} className="text-[#B68A3A]" />
                 </div>
                 <div className="leading-tight">
-                  <div className="font-sans text-[0.74rem] font-semibold text-[#24211F]">Hindi, English</div>
+                  <div className="font-sans text-[0.74rem] font-semibold text-[#24211F]">Hindi, English, Bengali</div>
                   <div className="font-sans text-[0.66rem] text-[#716B63]">Fluent Guidance</div>
                 </div>
               </div>

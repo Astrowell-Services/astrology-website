@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ReportClientPage from "./ReportClientPage";
 import { reportsList } from "@/data/reports";
+import { SITE_URL } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "Astrological Reports & Handwritten Vedic Dossiers | Acharya Debdutta",
@@ -17,11 +18,14 @@ export const metadata: Metadata = {
     "Acharya Debdutta reports",
     "Best Vedic astrologer report India",
   ],
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     title: "Handcrafted Astrological Reports | Acharya Debdutta",
     description:
       "Deep personal Vedic dossiers personally computed and verified by Acharya Debdutta. 100% manual analysis, divisional charts (D1, D9, D10), and actionable remedial blueprints.",
-    url: "https://acharyadebdutta.com/report",
+    url: `${SITE_URL}/report`,
     images: [
       {
         url: "/images/astrologer-sir.jpg",
@@ -44,7 +48,7 @@ export default function ReportPage() {
       "@type": "Person",
       name: "Acharya Debdutta",
       jobTitle: "Master Vedic Astrologer & Researcher",
-      image: "https://acharyadebdutta.com/images/astrologer-sir.jpg",
+      image: `${SITE_URL}/images/astrologer-sir.jpg`,
       telephone: "+9198300786134",
     },
     serviceType: "Astrological Analysis & Written Dossiers",

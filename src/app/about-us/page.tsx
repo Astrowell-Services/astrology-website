@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import AboutClientPage from "./AboutClientPage";
 import { astrologer } from "@/data/astrologer";
+import { SITE_URL } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "About Acharya Debdutta | Vedic Astrologer & Mentor | Kolkata",
@@ -15,11 +16,14 @@ export const metadata: Metadata = {
     "Famous astrologer West Bengal",
     "Ethical Vedic astrology consultation",
   ],
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     title: "About Acharya Debdutta | Master Vedic Astrologer",
     description:
       "28+ Years of Vedic practice, 10,000+ consultations, and an unyielding commitment to honest, fear-free astrological guidance.",
-    url: "https://acharyadebdutta.com/about-us",
+    url: `${SITE_URL}/about-us`,
     images: [
       {
         url: "/images/astrologer-sir.jpg",
@@ -40,7 +44,7 @@ export default function AboutPage() {
       name: astrologer.name,
       jobTitle: "Master Vedic Astrologer & Mentor",
       description: astrologer.fullBio,
-      image: "https://acharyadebdutta.com/images/astrologer-sir.jpg",
+      image: `${SITE_URL}/images/astrologer-sir.jpg`,
       telephone: astrologer.contact.phone,
       email: astrologer.contact.email,
       address: {

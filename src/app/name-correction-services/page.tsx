@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import NameCorrectionClientPage from "./NameCorrectionClientPage";
+import { SITE_URL } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "Name Correction & Numerology Services | Chaldean & Vedic Tuning | Acharya Debdutta",
@@ -13,11 +14,14 @@ export const metadata: Metadata = {
     "Business name numerology",
     "Acharya Debdutta numerologist",
   ],
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     title: "Name Correction & Numerology Services | Acharya Debdutta",
     description:
       "Vedic sound vibration and Chaldean numerology to align your name with fortune, authority, and prosperity without legal hassles.",
-    url: "https://acharyadebdutta.com/name-correction-services",
+    url: `${SITE_URL}/name-correction-services`,
     images: [
       {
         url: "/images/astrologer-sir.jpg",

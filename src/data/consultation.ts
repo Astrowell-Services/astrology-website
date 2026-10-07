@@ -58,7 +58,7 @@ export const whyChooseBenefits: ConsultationBenefit[] = [
   {
     id: "languages",
     title: "Language Options",
-    description: "Fluent consultations available in Hindi or English so you can comfortably express your innermost concerns with complete clarity.",
+    description: "Fluent consultations available in Bengali, Hindi, or English so you can comfortably express your innermost concerns with complete clarity.",
     iconName: "Languages",
   },
   {
@@ -180,7 +180,7 @@ export const consultationPackages: ConsultationPackage[] = [
     specs: {
       mode: "Direct Phone or WhatsApp Audio",
       timings: "Between 10 AM – 7 PM (IST)",
-      languages: "Hindi / English",
+      languages: "Hindi / English / Bengali",
       remedy: "One instant Vedic remedy",
     },
     highlighted: false,
@@ -199,7 +199,7 @@ export const consultationPackages: ConsultationPackage[] = [
     specs: {
       mode: "Direct Phone or WhatsApp Audio",
       timings: "Between 10 AM – 7 PM (IST)",
-      languages: "Hindi / English",
+      languages: "Hindi / English / Bengali",
       remedy: "Live call with detailed remedy suggestions",
     },
     highlighted: false,
@@ -219,7 +219,7 @@ export const consultationPackages: ConsultationPackage[] = [
     specs: {
       mode: "Direct Phone or WhatsApp Audio",
       timings: "Between 10 AM – 7 PM (IST)",
-      languages: "Hindi / English",
+      languages: "Hindi / English / Bengali",
       remedy: "WhatsApp follow-up for 48 hours",
     },
     highlighted: true,

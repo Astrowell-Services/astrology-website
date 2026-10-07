@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import BlogsClientPage from "./BlogsClientPage";
 import { blogPosts } from "@/data/blogs";
+import { SITE_URL } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "Vedic Astrology Journal & Articles | Acharya Debdutta",
@@ -16,11 +17,14 @@ export const metadata: Metadata = {
     "Name numerology correction",
     "Acharya Debdutta articles",
   ],
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     title: "Vedic Astrology Journal | Acharya Debdutta",
     description:
       "Timeless classical wisdom, planetary transit analyses, and practical remedial guidance written for conscious modern living.",
-    url: "https://acharyadebdutta.com/blogs",
+    url: `${SITE_URL}/blogs`,
     images: [
       {
         url: "/images/astrologer-sir.jpg",
@@ -43,7 +47,7 @@ export default function BlogsPage() {
       "@type": "Person",
       name: "Acharya Debdutta",
       jobTitle: "Master Vedic Astrologer",
-      image: "https://acharyadebdutta.com/images/astrologer-sir.jpg",
+      image: `${SITE_URL}/images/astrologer-sir.jpg`,
     },
     blogPost: blogPosts.map((post) => ({
       "@type": "BlogPosting",

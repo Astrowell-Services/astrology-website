@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ConsultationClientPage from "./ConsultationClientPage";
+import { SITE_URL } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "Call Consultation With Achariya Debdutta | Vedic Astrology Phone Guidance",
@@ -14,11 +15,14 @@ export const metadata: Metadata = {
     "Marriage astrology phone consultation",
     "Vedic remedies",
   ],
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     title: "Call Consultation With Achariya Debdutta | Vedic Astrologer",
     description:
       "Direct 1-on-1 telephonic Vedic astrology consultation with Achariya Debdutta. 100% Confidential, accurate predictions & personalized remedies.",
-    url: "https://acharyadebdutta.com/book-astrology-consultation",
+    url: `${SITE_URL}/book-astrology-consultation`,
     images: [
       {
         url: "/images/astrologer-sir.jpg",
@@ -41,7 +45,7 @@ export default function BookConsultationPage() {
       "@type": "Person",
       name: "Achariya Debdutta",
       jobTitle: "Vedic Astrologer",
-      image: "https://acharyadebdutta.com/images/astrologer-sir.jpg",
+      image: `${SITE_URL}/images/astrologer-sir.jpg`,
       telephone: "+9198300786134",
     },
     serviceType: "Astrology Consultation",

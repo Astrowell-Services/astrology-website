@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HoroscopeClientPage from "./HoroscopeClientPage";
+import { SITE_URL } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "Horoscope Predictions | Daily, Weekly & Monthly Rashi Forecasts | Acharya Debdutta",
@@ -15,11 +16,14 @@ export const metadata: Metadata = {
     "Kanya Rashi",
     "Vedic Astrology Forecast",
   ],
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     title: "Horoscope Predictions | Acharya Debdutta",
     description:
       "Get accurate daily, weekly, and monthly horoscope predictions based on your zodiac sign. Latest video updates by Acharya Debdutta.",
-    url: "https://acharyadebdutta.com/horoscope",
+    url: `${SITE_URL}/horoscope`,
     images: [
       {
         url: "/images/astrologer-sir.jpg",
@@ -42,7 +46,7 @@ export default function HoroscopePage() {
       "@type": "Person",
       name: "Acharya Debdutta",
       jobTitle: "Master Vedic Astrologer",
-      image: "https://acharyadebdutta.com/images/astrologer-sir.jpg",
+      image: `${SITE_URL}/images/astrologer-sir.jpg`,
       telephone: "+9198300786134",
     },
   };

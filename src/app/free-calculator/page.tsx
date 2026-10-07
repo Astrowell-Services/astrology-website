@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CalculatorsClientPage from "./CalculatorsClientPage";
+import { SITE_URL } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "Free Vedic Astrology Calculators | Kundali, Moon Sign & Sade Sati | Acharya Debdutta",
@@ -14,11 +15,14 @@ export const metadata: Metadata = {
     "Manglik dosha calculator",
     "Acharya Debdutta calculators",
   ],
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     title: "Free Vedic Astrology Calculators | Acharya Debdutta",
     description:
       "Instant, accurate Vedic calculations based on Lahiri Ayanamsha. Compute your Lagna, Moon Sign, Nakshatra, Sade Sati, and Manglik Dosha.",
-    url: "https://acharyadebdutta.com/free-calculator",
+    url: `${SITE_URL}/free-calculator`,
     images: [
       {
         url: "/images/astrologer-sir.jpg",
