@@ -8,19 +8,19 @@ import MobileMenu from "./MobileMenu";
 import { astrologer } from "@/data/astrologer";
 import BrandLogoMark from "@/components/astrology/BrandLogoMark";
 
-const primaryNav = [
+const primaryNav: { label: string; href: string; badge?: string }[] = [
   { label: "Call Consultant", href: "/book-astrology-consultation/" },
   { label: "Courses", href: "/courses/" },
   { label: "Reports", href: "/report/" },
   { label: "Horoscope", href: "/horoscope/" },
-  { label: "Free Calculators", href: "/free-calculator/" },
+  { label: "Free Calculators", href: "/free-calculator/", badge: "Soon" },
   { label: "Blogs", href: "/blogs/" },
   { label: "About Us", href: "/about-us/" },
 ];
 
-const moreNav = [
-  { label: "Name Correction Services", href: "/name-correction-services/" },
-  { label: "Online Puja Services", href: "/online-puja-services/" },
+const moreNav: { label: string; href: string; badge?: string }[] = [
+  { label: "Name Correction Services", href: "/name-correction-services/", badge: "Soon" },
+  { label: "Online Puja Services", href: "/online-puja-services/", badge: "Soon" },
 ];
 
 export default function Header() {
@@ -99,13 +99,18 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-3 py-2 font-sans text-[0.8rem] font-500 tracking-wide transition-colors duration-200 whitespace-nowrap ${pathname === item.href || pathname.startsWith(item.href)
+                  className={`inline-flex items-center gap-1.5 px-3 py-2 font-sans text-[0.8rem] font-500 tracking-wide transition-colors duration-200 whitespace-nowrap ${pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
                       ? "text-[#632D3D]"
                       : "text-[#24211F] hover:text-[#632D3D]"
                     }`}
                   style={{ fontWeight: 500 }}
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  {item.badge && (
+                    <span className="text-[0.62rem] uppercase font-semibold tracking-wider px-1.5 py-0.5 rounded-xs bg-[#B68A3A]/15 text-[#632D3D] border border-[#B68A3A]/30">
+                      {item.badge}
+                    </span>
+                  )}
                 </Link>
               ))}
 
@@ -127,15 +132,20 @@ export default function Header() {
                 </button>
 
                 {moreOpen && (
-                  <div className="absolute top-full right-0 mt-1 w-64 bg-[#FFFDF8] border border-[#D9CFBD] shadow-lg z-50">
+                  <div className="absolute top-full right-0 mt-1 w-68 bg-[#FFFDF8] border border-[#D9CFBD] shadow-lg z-50">
                     {moreNav.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
                         onClick={() => setMoreOpen(false)}
-                        className="block px-5 py-3 font-sans text-[0.8rem] text-[#24211F] hover:text-[#632D3D] hover:bg-[#F7F3EA] transition-colors duration-150 border-b border-[#D9CFBD] last:border-b-0"
+                        className="flex items-center justify-between px-5 py-3 font-sans text-[0.8rem] text-[#24211F] hover:text-[#632D3D] hover:bg-[#F7F3EA] transition-colors duration-150 border-b border-[#D9CFBD] last:border-b-0"
                       >
-                        {item.label}
+                        <span>{item.label}</span>
+                        {item.badge && (
+                          <span className="text-[0.62rem] uppercase font-semibold tracking-wider px-1.5 py-0.5 rounded-xs bg-[#B68A3A]/15 text-[#632D3D] border border-[#B68A3A]/30">
+                            {item.badge}
+                          </span>
+                        )}
                       </Link>
                     ))}
                   </div>
@@ -149,13 +159,18 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-2.5 py-2 font-sans text-[0.75rem] font-500 tracking-wide transition-colors duration-200 whitespace-nowrap ${pathname === item.href
+                  className={`inline-flex items-center gap-1 px-2.5 py-2 font-sans text-[0.75rem] font-500 tracking-wide transition-colors duration-200 whitespace-nowrap ${pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
                       ? "text-[#632D3D]"
                       : "text-[#24211F] hover:text-[#632D3D]"
                     }`}
                   style={{ fontWeight: 500 }}
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  {item.badge && (
+                    <span className="text-[0.58rem] uppercase font-semibold tracking-wider px-1 py-0.2 rounded-xs bg-[#B68A3A]/15 text-[#632D3D] border border-[#B68A3A]/30">
+                      {item.badge}
+                    </span>
+                  )}
                 </Link>
               ))}
 
@@ -179,9 +194,14 @@ export default function Header() {
                         key={item.href}
                         href={item.href}
                         onClick={() => setMoreOpen(false)}
-                        className="block px-5 py-3 font-sans text-[0.8rem] text-[#24211F] hover:text-[#632D3D] hover:bg-[#F7F3EA] transition-colors border-b border-[#D9CFBD] last:border-b-0"
+                        className="flex items-center justify-between px-5 py-3 font-sans text-[0.8rem] text-[#24211F] hover:text-[#632D3D] hover:bg-[#F7F3EA] transition-colors border-b border-[#D9CFBD] last:border-b-0"
                       >
-                        {item.label}
+                        <span>{item.label}</span>
+                        {'badge' in item && item.badge && (
+                          <span className="text-[0.62rem] uppercase font-semibold tracking-wider px-1.5 py-0.5 rounded-xs bg-[#B68A3A]/15 text-[#632D3D] border border-[#B68A3A]/30">
+                            {item.badge}
+                          </span>
+                        )}
                       </Link>
                     ))}
                   </div>

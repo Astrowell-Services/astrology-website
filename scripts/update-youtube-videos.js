@@ -83,6 +83,43 @@ async function fetchVideoTitleFromOEmbed(videoId) {
   return null;
 }
 
+function parseRelativeDate(text) {
+  if (!text) return null;
+  const now = Date.now();
+  const lower = text.toLowerCase();
+  
+  const minutesMatch = lower.match(/(\d+)\s*(?:minute|min|m\b)/);
+  if (minutesMatch) return new Date(now - parseInt(minutesMatch[1], 10) * 60 * 1000).toISOString();
+
+  const hoursMatch = lower.match(/(\d+)\s*(?:hour|h\b)/);
+  if (hoursMatch) return new Date(now - parseInt(hoursMatch[1], 10) * 3600 * 1000).toISOString();
+  
+  const daysMatch = lower.match(/(\d+)\s*(?:day|d\b)/);
+  if (daysMatch) return new Date(now - parseInt(daysMatch[1], 10) * 24 * 3600 * 1000).toISOString();
+  
+  const weeksMatch = lower.match(/(\d+)\s*(?:week|w\b)/);
+  if (weeksMatch) return new Date(now - parseInt(weeksMatch[1], 10) * 7 * 24 * 3600 * 1000).toISOString();
+  
+  const monthsMatch = lower.match(/(\d+)\s*(?:month|mo\b)/);
+  if (monthsMatch) return new Date(now - parseInt(monthsMatch[1], 10) * 30 * 24 * 3600 * 1000).toISOString();
+  
+  const yearsMatch = lower.match(/(\d+)\s*(?:year|y\b)/);
+  if (yearsMatch) return new Date(now - parseInt(yearsMatch[1], 10) * 365 * 24 * 3600 * 1000).toISOString();
+
+  return null;
+}
+
+function findLockupViewModels(obj, results = []) {
+  if (!obj || typeof obj !== 'object') return results;
+  if (obj.lockupViewModel && obj.lockupViewModel.contentId) {
+    results.push(obj.lockupViewModel);
+  }
+  for (const k of Object.keys(obj)) {
+    findLockupViewModels(obj[k], results);
+  }
+  return results;
+}
+
 async function fetchFromChannelHtml(handle) {
   const channelUrl = `https://www.youtube.com/@${handle}/videos`;
   console.log(`[YouTube Updater] Trying Strategy 2 (Direct Channel HTML): ${channelUrl}`);
@@ -99,26 +136,74 @@ async function fetchFromChannelHtml(handle) {
   }
 
   const html = await res.text();
-  const videoIdMatches = Array.from(html.matchAll(/"videoId":"([a-zA-Z0-9_-]{11})"/g)).map(m => m[1]);
-  const uniqueIds = [...new Set(videoIdMatches)].slice(0, MAX_VIDEOS);
-
-  if (uniqueIds.length === 0) {
-    throw new Error('No video IDs discovered in channel HTML.');
-  }
-
-  console.log(`[YouTube Updater] Discovered ${uniqueIds.length} latest video IDs from channel.`);
-
   const parsed = [];
-  for (const id of uniqueIds) {
-    const title = (await fetchVideoTitleFromOEmbed(id)) || `Astrology Video (${id})`;
-    parsed.push({
-      id,
-      url: `https://www.youtube.com/watch?v=${id}`,
-      title,
-      publishedAt: new Date().toISOString(),
-      thumbnail: `https://img.youtube.com/vi/${id}/hqdefault.jpg`,
-    });
+
+  // Try extracting structured richGridRenderer / lockupViewModels from ytInitialData
+  const jsonMatch = html.match(/var ytInitialData = ({.*?});<\/script>/s);
+  if (jsonMatch) {
+    try {
+      const data = JSON.parse(jsonMatch[1]);
+      const lockups = findLockupViewModels(data);
+      console.log(`[YouTube Updater] Discovered ${lockups.length} lockup items in ytInitialData.`);
+
+      for (const l of lockups.slice(0, MAX_VIDEOS)) {
+        const id = l.contentId;
+        const meta = l.metadata?.lockupMetadataViewModel;
+        const title = meta?.title?.content;
+        const rows = meta?.metadata?.contentMetadataViewModel?.metadataRows || [];
+        
+        let relativeTime = '';
+        for (const row of rows) {
+          for (const part of row.metadataParts || []) {
+            const label = part.accessibilityLabel || part.text?.content || '';
+            if (label.toLowerCase().includes('ago')) {
+              relativeTime = label;
+              break;
+            }
+          }
+          if (relativeTime) break;
+        }
+
+        const calculatedDate = parseRelativeDate(relativeTime) || new Date().toISOString();
+
+        parsed.push({
+          id,
+          url: `https://www.youtube.com/watch?v=${id}`,
+          title: title || `Astrology Video (${id})`,
+          publishedAt: calculatedDate,
+          thumbnail: `https://img.youtube.com/vi/${id}/hqdefault.jpg`,
+        });
+      }
+    } catch (parseErr) {
+      console.warn('[YouTube Updater] Failed parsing ytInitialData:', parseErr.message);
+    }
   }
+
+  // Fallback to regex if ytInitialData didn't populate videos
+  if (parsed.length === 0) {
+    const videoIdMatches = Array.from(html.matchAll(/"videoId":"([a-zA-Z0-9_-]{11})"/g)).map(m => m[1]);
+    const uniqueIds = [...new Set(videoIdMatches)].slice(0, MAX_VIDEOS);
+
+    if (uniqueIds.length === 0) {
+      throw new Error('No video IDs discovered in channel HTML.');
+    }
+
+    console.log(`[YouTube Updater] Fallback: Discovered ${uniqueIds.length} video IDs via regex.`);
+    for (let i = 0; i < uniqueIds.length; i++) {
+      const id = uniqueIds[i];
+      const title = (await fetchVideoTitleFromOEmbed(id)) || `Astrology Video (${id})`;
+      // If no relative time available, stagger by 24h intervals so they don't all look identical
+      const fallbackDate = new Date(Date.now() - i * 24 * 3600 * 1000).toISOString();
+      parsed.push({
+        id,
+        url: `https://www.youtube.com/watch?v=${id}`,
+        title,
+        publishedAt: fallbackDate,
+        thumbnail: `https://img.youtube.com/vi/${id}/hqdefault.jpg`,
+      });
+    }
+  }
+
   return parsed;
 }
 
@@ -172,9 +257,14 @@ async function updateYouTubeVideos() {
     process.exit(0);
   }
 
-  // Deduplicate and prioritize fresh videos
+  // Deduplicate and prioritize fresh videos, preserving original publish dates
   const videoMap = new Map();
   for (const v of freshVideos) {
+    const existing = existingVideos.find(e => e.id === v.id);
+    if (existing && existing.publishedAt) {
+      // Keep previously locked upload date
+      v.publishedAt = existing.publishedAt;
+    }
     if (!videoMap.has(v.id)) videoMap.set(v.id, v);
   }
   for (const v of existingVideos) {

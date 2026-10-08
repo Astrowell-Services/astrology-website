@@ -11,7 +11,10 @@ interface MobileMenuProps {
   pathname: string;
 }
 
-const menuGroups = [
+const menuGroups: {
+  label: string;
+  links: { label: string; href: string; badge?: string }[];
+}[] = [
   {
     label: "Main",
     links: [
@@ -25,14 +28,14 @@ const menuGroups = [
     links: [
       { label: "Reports", href: "/report/" },
       { label: "Horoscope", href: "/horoscope/" },
-      { label: "Free Calculators", href: "/free-calculator/" },
+      { label: "Free Calculators", href: "/free-calculator/", badge: "Soon" },
     ],
   },
   {
     label: "Services",
     links: [
-      { label: "Name Correction Services", href: "/name-correction-services/" },
-      { label: "Online Puja Services", href: "/online-puja-services/" },
+      { label: "Name Correction Services", href: "/name-correction-services/", badge: "Soon" },
+      { label: "Online Puja Services", href: "/online-puja-services/", badge: "Soon" },
       { label: "Courses", href: "/courses/" },
     ],
   },
@@ -113,13 +116,18 @@ export default function MobileMenu({ isOpen, onClose, pathname }: MobileMenuProp
                           <Link
                             href={link.href}
                             onClick={onClose}
-                            className={`block py-2.5 px-3 font-sans text-[0.9rem] transition-colors duration-150 ${
+                            className={`flex items-center justify-between py-2.5 px-3 font-sans text-[0.9rem] transition-colors duration-150 ${
                               active
                                 ? "text-[#632D3D] bg-[#F7F3EA] font-600"
                                 : "text-[#24211F] hover:text-[#632D3D] hover:bg-[#F7F3EA]"
                             }`}
                           >
-                            {link.label}
+                            <span>{link.label}</span>
+                            {link.badge && (
+                              <span className="text-[0.62rem] uppercase font-semibold tracking-wider px-2 py-0.5 rounded-full bg-[#B68A3A]/15 text-[#632D3D] border border-[#B68A3A]/30">
+                                {link.badge}
+                              </span>
+                            )}
                           </Link>
                         </li>
                       );
