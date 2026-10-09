@@ -140,7 +140,7 @@ export default function NameCorrectionModal({
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="e.g. Suprakash Biswas"
+                placeholder="Type your name here"
                 className="w-full bg-[#FFFDF8] border border-[#D9CFBD] p-2.5 text-sm text-[#24211F] placeholder-[#A0988A] focus:outline-hidden focus:border-[#632D3D]"
               />
             </div>

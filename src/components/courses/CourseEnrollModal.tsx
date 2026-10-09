@@ -139,7 +139,7 @@ export default function CourseEnrollModal({
               <input
                 type="text"
                 required
-                placeholder="e.g. Suprakash Sharma"
+                placeholder="Type your name here"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="w-full px-3 py-2 bg-[#F7F3EA]/50 border border-[#D9CFBD] text-[#24211F] text-sm focus:outline-none focus:border-[#B68A3A]"
