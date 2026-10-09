@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/about-us`,
     images: [
       {
-        url: "/images/astrologer-sir.jpg",
-        width: 1200,
-        height: 630,
+        url: "/images/sir1.jpeg",
+        width: 1316,
+        height: 1195,
         alt: "Acharya Debdutta - Master Vedic Astrologer",
       },
     ],
@@ -44,7 +44,7 @@ export default function AboutPage() {
       name: astrologer.name,
       jobTitle: "Master Vedic Astrologer & Mentor",
       description: astrologer.fullBio,
-      image: `${SITE_URL}/images/astrologer-sir.jpg`,
+      image: `${SITE_URL}/images/sir1.jpeg`,
       telephone: astrologer.contact.phone,
       email: astrologer.contact.email,
       address: {

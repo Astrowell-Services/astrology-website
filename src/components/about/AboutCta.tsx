@@ -39,7 +39,7 @@ export default function AboutCta() {
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-[#632D3D] text-[#632D3D] bg-[#FFFDF8] font-sans text-xs font-semibold tracking-wider uppercase hover:bg-[#632D3D] hover:text-[#FFFDF8] transition-colors"
           >
             <MessageCircle size={15} />
-            <span>WhatsApp (+91 98314 21490)</span>
+            <span>WhatsApp (+91 93300 27339)</span>
           </a>
 
           <Link

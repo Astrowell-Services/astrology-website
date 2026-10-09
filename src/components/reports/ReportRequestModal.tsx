@@ -163,7 +163,7 @@ export default function ReportRequestModal({
                 required
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                placeholder="e.g. +91 98314 21490"
+                placeholder="e.g. +91 93300 27339"
                 className="w-full bg-[#FFFDF8] border border-[#D9CFBD] p-2.5 text-sm text-[#24211F] placeholder-[#A0988A] focus:outline-hidden focus:border-[#632D3D]"
               />
             </div>

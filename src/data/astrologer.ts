@@ -23,12 +23,12 @@ export const astrologer = {
     phone: "+9198300786134",
     email: "astroachariyadebdutta@gmail.com",
     location: "Kolkata, West Bengal, India",
-    whatsapp: "+919831421490",
+    whatsapp: "+919330027339",
   },
   social: {
     instagram: "#",
     youtube: "https://www.youtube.com/@AstronamaAchariyaDebdutta",
     facebook: "#",
-    whatsapp: "https://wa.me/919831421490",
+    whatsapp: "https://wa.me/919330027339",
   },
 };

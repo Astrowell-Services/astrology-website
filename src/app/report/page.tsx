@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/report`,
     images: [
       {
-        url: "/images/astrologer-sir.jpg",
-        width: 1200,
-        height: 630,
+        url: "/images/benevolent-guru.png",
+        width: 1086,
+        height: 1448,
         alt: "Astrological Reports by Acharya Debdutta",
       },
     ],
@@ -48,7 +48,7 @@ export default function ReportPage() {
       "@type": "Person",
       name: "Acharya Debdutta",
       jobTitle: "Master Vedic Astrologer & Researcher",
-      image: `${SITE_URL}/images/astrologer-sir.jpg`,
+      image: `${SITE_URL}/images/sir1.jpeg`,
       telephone: "+9198300786134",
     },
     serviceType: "Astrological Analysis & Written Dossiers",

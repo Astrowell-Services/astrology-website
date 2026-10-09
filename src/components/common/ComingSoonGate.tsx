@@ -155,7 +155,7 @@ export default function ComingSoonGate({
 
                 <div className="grid grid-cols-2 gap-2.5">
                   <a
-                    href="https://wa.me/919831421490?text=Hello%20Acharya%20Debdutta,%20I%20am%20inquiring%20about%20the%20upcoming%20services%20and%20would%20like%20to%20consult."
+                    href="https://wa.me/919330027339?text=Hello%20Acharya%20Debdutta,%20I%20am%20inquiring%20about%20the%20upcoming%20services%20and%20would%20like%20to%20consult."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-1.5 px-3 py-2.5 bg-[#FFFDF8] border border-[#25D366] text-[#24211F] hover:bg-[#25D366]/10 font-sans text-[0.74rem] font-semibold uppercase tracking-wider transition-colors cursor-pointer"

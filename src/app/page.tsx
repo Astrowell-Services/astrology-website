@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     url: SITE_URL,
     images: [
       {
-        url: "/images/astrologer-sir.jpg",
-        width: 1200,
-        height: 630,
+        url: "/images/benevolent-guru.png",
+        width: 1086,
+        height: 1448,
         alt: "Acharya Debdutta - Vedic Astrologer Kolkata",
       },
     ],
@@ -41,7 +41,7 @@ export default function HomePage() {
     "@type": "ProfessionalService",
     name: "Acharya Debdutta - Vedic Astrologer",
     alternateName: "Astroacharya Debdutta Kolkata",
-    image: `${SITE_URL}/images/astrologer-sir.jpg`,
+    image: `${SITE_URL}/images/benevolent-guru.png`,
     url: SITE_URL,
     telephone: astrologer.contact.phone,
     priceRange: "₹₹",

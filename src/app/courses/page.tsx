@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/courses`,
     images: [
       {
-        url: "/images/astrologer-sir.jpg",
-        width: 1200,
-        height: 630,
+        url: "/images/sir1.jpeg",
+        width: 1316,
+        height: 1195,
         alt: "Vedic Astrology Courses with Achariya Debdutta",
       },
     ],
@@ -48,7 +48,7 @@ export default function CoursesPage() {
       "@type": "Person",
       name: "Achariya Debdutta",
       jobTitle: "Master Vedic Astrologer & Mentor",
-      image: `${SITE_URL}/images/astrologer-sir.jpg`,
+      image: `${SITE_URL}/images/sir1.jpeg`,
       telephone: "+9198300786134",
     },
     educationalCredentialAwarded: "Certificate of Completion",

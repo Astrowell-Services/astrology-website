@@ -27,7 +27,7 @@ export default function ConsultationPackages({ onSelectPackage }: ConsultationPa
       const message = encodeURIComponent(
         `Hello Achariya Debdutta ji, I would like to book the ${pkg.name} (₹${pkg.price}, ${pkg.duration}) for Call Consultation.`
       );
-      window.open(`https://wa.me/919831421490?text=${message}`, "_blank");
+      window.open(`https://wa.me/919330027339?text=${message}`, "_blank");
     }
   };
 

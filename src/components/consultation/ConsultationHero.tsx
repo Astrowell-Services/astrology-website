@@ -52,7 +52,7 @@ export default function ConsultationHero() {
               </a>
 
               <a
-                href="https://wa.me/919831421490?text=Hello%20Achariya%20Debdutta,%20I%20would%20like%20to%20inquire%20about%20a%20telephonic%20astrology%20consultation."
+                href="https://wa.me/919330027339?text=Hello%20Achariya%20Debdutta,%20I%20would%20like%20to%20inquire%20about%20a%20telephonic%20astrology%20consultation."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-[#FFFDF8] border border-[#25D366] text-[#24211F] hover:bg-[#25D366]/10 font-sans text-[0.84rem] font-semibold uppercase tracking-wider transition-all duration-200 shadow-xs cursor-pointer"

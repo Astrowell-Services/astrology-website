@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/book-astrology-consultation`,
     images: [
       {
-        url: "/images/astrologer-sir.jpg",
-        width: 1200,
-        height: 630,
+        url: "/images/sir1.jpeg",
+        width: 1316,
+        height: 1195,
         alt: "Call Consultation With Achariya Debdutta",
       },
     ],
@@ -45,7 +45,7 @@ export default function BookConsultationPage() {
       "@type": "Person",
       name: "Achariya Debdutta",
       jobTitle: "Vedic Astrologer",
-      image: `${SITE_URL}/images/astrologer-sir.jpg`,
+      image: `${SITE_URL}/images/sir1.jpeg`,
       telephone: "+9198300786134",
     },
     serviceType: "Astrology Consultation",

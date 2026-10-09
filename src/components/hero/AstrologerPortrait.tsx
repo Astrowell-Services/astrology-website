@@ -26,11 +26,11 @@ export default function AstrologerPortrait({ className = "" }: AstrologerPortrai
       <div className="relative w-full h-full overflow-hidden bg-[#E8DEC8] shadow-[0_12px_40px_rgba(36,33,31,0.08)] border border-[#D9CFBD]">
         {/* Real photo */}
         <Image
-          src="/images/astrologer-sir.jpg"
-          alt="Acharya Debdutta — Vedic Astrologer"
+          src="/images/benevolent-guru.png"
+          alt="Benevolent Guru — Acharya Debdutta Vedic Astrologer"
           fill
           priority
-          className="object-cover object-top z-10 transition-transform duration-700 hover:scale-[1.02]"
+          className="object-cover object-center z-10 transition-transform duration-700 hover:scale-[1.02]"
           sizes="(max-width: 768px) 100vw, 45vw"
           onError={(e) => {
             (e.target as HTMLImageElement).style.display = "none";

@@ -72,7 +72,7 @@ export default function NameCorrectionHero({ onRequestClick }: NameCorrectionHer
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 border border-[#D9CFBD] text-[#716B63] bg-[#FFFDF8] hover:border-[#632D3D] hover:text-[#632D3D] font-sans text-xs font-semibold tracking-wider uppercase transition-colors"
           >
             <MessageCircle size={15} className="text-[#25D366]" />
-            <span>WhatsApp (+91 98314 21490)</span>
+            <span>WhatsApp (+91 93300 27339)</span>
           </a>
         </motion.div>
       </div>

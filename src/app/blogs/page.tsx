@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/blogs`,
     images: [
       {
-        url: "/images/astrologer-sir.jpg",
-        width: 1200,
-        height: 630,
+        url: "/images/sir1.jpeg",
+        width: 1316,
+        height: 1195,
         alt: "Vedic Astrology Journal with Acharya Debdutta",
       },
     ],
@@ -47,7 +47,7 @@ export default function BlogsPage() {
       "@type": "Person",
       name: "Acharya Debdutta",
       jobTitle: "Master Vedic Astrologer",
-      image: `${SITE_URL}/images/astrologer-sir.jpg`,
+      image: `${SITE_URL}/images/sir1.jpeg`,
     },
     blogPost: blogPosts.map((post) => ({
       "@type": "BlogPosting",

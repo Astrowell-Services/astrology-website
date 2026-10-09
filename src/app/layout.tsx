@@ -63,9 +63,9 @@ export const metadata: Metadata = {
       "Classical Vedic Jyotish guidance for career, marriage, finance, and life decisions with 28+ years of dedicated practice.",
     images: [
       {
-        url: "/images/astrologer-sir.jpg",
-        width: 1200,
-        height: 630,
+        url: "/images/benevolent-guru.png",
+        width: 1086,
+        height: 1448,
         alt: "Acharya Debdutta - Master Vedic Astrologer",
       },
     ],
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     title: "Acharya Debdutta | Vedic Astrologer",
     description:
       "Classical Vedic Jyotish guidance for relationships, career, and life decisions.",
-    images: ["/images/astrologer-sir.jpg"],
+    images: ["/images/benevolent-guru.png"],
   },
 };
 

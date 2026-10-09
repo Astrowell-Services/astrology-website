@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/online-puja-services`,
     images: [
       {
-        url: "/images/astrologer-sir.jpg",
-        width: 1200,
-        height: 630,
+        url: "/images/benevolent-guru.png",
+        width: 1086,
+        height: 1448,
         alt: "Online Vedic Puja Services with Acharya Debdutta",
       },
     ],

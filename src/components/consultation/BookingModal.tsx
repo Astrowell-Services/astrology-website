@@ -51,7 +51,7 @@ export default function BookingModal({
     ].join("\n");
 
     window.open(
-      `https://wa.me/919831421490?text=${encodeURIComponent(details)}`,
+      `https://wa.me/919330027339?text=${encodeURIComponent(details)}`,
       "_blank"
     );
     onClose();
