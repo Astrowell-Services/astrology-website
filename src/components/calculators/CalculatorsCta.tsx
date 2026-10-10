@@ -23,7 +23,7 @@ export default function CalculatorsCta() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
           <a
-            href={`tel:${astrologer.contact.phone}`}
+            href={`tel:${astrologer.contact.phone.replace(/[^0-9+]/g, "")}`}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#632D3D] text-[#FFFDF8] font-sans text-xs font-semibold tracking-wider uppercase hover:bg-[#4E2230] transition-colors shadow-sm cursor-pointer"
           >
             <Phone size={15} />

@@ -138,7 +138,7 @@ export default function ComingSoonGate({
               {/* Call-to-Action Buttons */}
               <div className="lg:col-span-5 flex flex-col gap-3 justify-center">
                 <a
-                  href="tel:+9198300786134"
+                  href="tel:+919830078634"
                   id={`coming-soon-call-btn-${serviceKey}`}
                   className="group relative flex items-center justify-center gap-3.5 px-6 py-4 bg-[#632D3D] hover:bg-[#4A1F2B] text-[#FFFDF8] font-sans transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer"
                 >
@@ -148,7 +148,7 @@ export default function ComingSoonGate({
                       Call Consultant Helpline
                     </div>
                     <div className="font-bold text-base sm:text-lg text-[#FFFDF8]">
-                      +91 98300 78634
+                      +919830078634
                     </div>
                   </div>
                 </a>
@@ -221,7 +221,7 @@ export default function ComingSoonGate({
                       Vedic Precision
                     </span>
                     <a
-                      href="tel:+9198300786134"
+                      href="tel:+919830078634"
                       className="font-sans text-[0.72rem] font-semibold text-[#632D3D] hover:underline flex items-center gap-1"
                     >
                       <span>Call Consultant</span>
@@ -242,12 +242,12 @@ export default function ComingSoonGate({
                   For immediate assistance & consultation inquiries
                 </p>
                 <p className="font-sans text-[0.75rem] text-[#716B63]">
-                  Acharya Debdutta Helpline: +91 98300 78634
+                  Acharya Debdutta Helpline: +919830078634
                 </p>
               </div>
             </div>
             <a
-              href="tel:+9198300786134"
+              href="tel:+919830078634"
               className="px-4 py-2 bg-[#632D3D] hover:bg-[#4A1F2B] text-[#FFFDF8] font-sans text-xs font-semibold tracking-wider uppercase transition-colors shrink-0"
             >
               Call Consultant

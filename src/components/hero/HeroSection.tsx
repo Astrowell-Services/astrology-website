@@ -71,7 +71,7 @@ export default function HeroSection() {
               <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
             <a
-              href="tel:+9198300786134"
+              href="tel:+919830078634"
               id="hero-cta-secondary"
               className="btn-secondary"
             >

@@ -49,7 +49,7 @@ export default function CoursesPage() {
       name: "Achariya Debdutta",
       jobTitle: "Master Vedic Astrologer & Mentor",
       image: `${SITE_URL}/images/sir1.jpeg`,
-      telephone: "+9198300786134",
+      telephone: "+919830078634",
     },
     educationalCredentialAwarded: "Certificate of Completion",
     hasCourse: detailedCourses.map((c) => ({

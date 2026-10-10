@@ -45,7 +45,7 @@ export default function FreeCalculatorsPage() {
     provider: {
       "@type": "Person",
       name: "Acharya Debdutta",
-      telephone: "+9198300786134",
+      telephone: "+919830078634",
     },
   };
 

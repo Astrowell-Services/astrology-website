@@ -47,7 +47,7 @@ export default function HoroscopePage() {
       name: "Acharya Debdutta",
       jobTitle: "Master Vedic Astrologer",
       image: `${SITE_URL}/images/benevolent-guru.png`,
-      telephone: "+9198300786134",
+      telephone: "+919830078634",
     },
   };
 

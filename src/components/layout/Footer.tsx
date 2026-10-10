@@ -137,7 +137,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Phone size={14} className="text-[#B68A3A] mt-0.5 shrink-0" />
                 <a
-                  href={`tel:${astrologer.contact.phone}`}
+                  href={`tel:${astrologer.contact.phone.replace(/[^0-9+]/g, "")}`}
                   className="font-sans text-[0.85rem] text-[#716B63] hover:text-[#632D3D] transition-colors"
                 >
                   {astrologer.contact.phone}

@@ -46,7 +46,7 @@ export default function BookConsultationPage() {
       name: "Achariya Debdutta",
       jobTitle: "Vedic Astrologer",
       image: `${SITE_URL}/images/sir1.jpeg`,
-      telephone: "+9198300786134",
+      telephone: "+919830078634",
     },
     serviceType: "Astrology Consultation",
     areaServed: ["India", "Global"],

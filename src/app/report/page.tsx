@@ -49,7 +49,7 @@ export default function ReportPage() {
       name: "Acharya Debdutta",
       jobTitle: "Master Vedic Astrologer & Researcher",
       image: `${SITE_URL}/images/sir1.jpeg`,
-      telephone: "+9198300786134",
+      telephone: "+919830078634",
     },
     serviceType: "Astrological Analysis & Written Dossiers",
     areaServed: ["India", "Global"],
