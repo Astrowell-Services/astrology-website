@@ -1,8 +1,15 @@
 {
   "channelId": "UCqDfG4lWZ5OJgJSc2XK7g4A",
   "channelHandle": "@AstronamaAchariyaDebdutta",
-  "lastUpdated": "2026-10-12T02:16:41.577Z",
+  "lastUpdated": "2026-10-13T02:16:11.869Z",
   "videos": [
+    {
+      "id": "eatbNaJoWnU",
+      "url": "https://www.youtube.com/watch?v=eatbNaJoWnU",
+      "title": "সিংহ রাশির আগামী 84 দিনে গোল্ডেন টাইম | Golden Time- Leo | Singh Rashi | Achariya Debdutta",
+      "publishedAt": "2026-10-12T14:16:11.868Z",
+      "thumbnail": "https://img.youtube.com/vi/eatbNaJoWnU/hqdefault.jpg"
+    },
     {
       "id": "Rgi1kuuwxqQ",
       "url": "https://www.youtube.com/watch?v=Rgi1kuuwxqQ",
@@ -23,13 +30,6 @@
       "title": "বৃষ রাশির 100% গোপন সত্য । Vrishabh Rashi। Taurus | Achariya Debdutta",
       "publishedAt": "2026-10-09T14:00:10+00:00",
       "thumbnail": "https://img.youtube.com/vi/krNFHCKoDDE/hqdefault.jpg"
-    },
-    {
-      "id": "xTryUE1RGQM",
-      "url": "https://www.youtube.com/watch?v=xTryUE1RGQM",
-      "title": "মেষ রাশির 100% গোপন সত্য । Mesh Rashi। Aries | Achariya Debdutta",
-      "publishedAt": "2026-10-08T13:45:15+00:00",
-      "thumbnail": "https://img.youtube.com/vi/xTryUE1RGQM/hqdefault.jpg"
     }
   ]
 }
