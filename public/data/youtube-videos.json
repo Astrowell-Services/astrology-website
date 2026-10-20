@@ -1,8 +1,15 @@
 {
   "channelId": "UCqDfG4lWZ5OJgJSc2XK7g4A",
   "channelHandle": "@AstronamaAchariyaDebdutta",
-  "lastUpdated": "2026-10-19T02:25:29.066Z",
+  "lastUpdated": "2026-10-20T02:25:16.016Z",
   "videos": [
+    {
+      "id": "mdUVTDgdgZY",
+      "url": "https://www.youtube.com/watch?v=mdUVTDgdgZY",
+      "title": "মীন রাশির আগামী 84 দিনে গোল্ডেন টাইম | Golden Time- Pisces | Meen Rashi | Achariya Debdutta",
+      "publishedAt": "2026-10-19T14:25:16.016Z",
+      "thumbnail": "https://img.youtube.com/vi/mdUVTDgdgZY/hqdefault.jpg"
+    },
     {
       "id": "-L9SQ6aXzEw",
       "url": "https://www.youtube.com/watch?v=-L9SQ6aXzEw",
@@ -23,13 +30,6 @@
       "title": "বৃশ্চিক রাশির আগামী 84 দিনে গোল্ডেন টাইম | Golden Time- Scorpio | Vrischik Rashi | Achariya Debdutta",
       "publishedAt": "2026-10-16T02:25:34.643Z",
       "thumbnail": "https://img.youtube.com/vi/UK29LuFiq20/hqdefault.jpg"
-    },
-    {
-      "id": "mEgYHoe86zw",
-      "url": "https://www.youtube.com/watch?v=mEgYHoe86zw",
-      "title": "কন্যা রাশির আগামী 84 দিনে গোল্ডেন টাইম | Golden Time- Virgo | Kanya Rashi | Achariya Debdutta",
-      "publishedAt": "2026-10-17T02:23:54.544Z",
-      "thumbnail": "https://img.youtube.com/vi/mEgYHoe86zw/hqdefault.jpg"
     }
   ]
 }
