@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Globe, Languages, Clock, Phone, PhoneCall, AlertCircle } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 interface LimitedSlotsBannerProps {
   onBookClick?: () => void;
@@ -49,8 +50,17 @@ export default function LimitedSlotsBanner({ onBookClick }: LimitedSlotsBannerPr
             <div className="mb-8">
               <a
                 href="tel:+919830078634"
+                id="btn-limited-slots-call"
+                data-track="call_consultant_click"
+                onClick={() =>
+                  trackEvent("consultation_call_click", {
+                    button_name: "Book Call Now",
+                    button_location: "limited_slots_banner",
+                    phone_number: "+919830078634",
+                    page_path: "/book-astrology-consultation",
+                  })
+                }
                 className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[#632D3D] hover:bg-[#4A1F2B] text-[#FFFDF8] font-sans text-sm font-semibold uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-lg"
-                id="limited-slots-book-btn"
               >
                 <PhoneCall size={16} />
                 <span>Book Call Now</span>

@@ -6,6 +6,7 @@ import { PhoneCall, ShieldCheck, Clock, Award, MessageSquare } from "lucide-reac
 import AstrologerPortrait from "@/components/hero/AstrologerPortrait";
 import CelestialParticles from "@/components/astrology/CelestialParticles";
 import CelestialWheel from "@/components/astrology/CelestialWheel";
+import { trackEvent } from "@/lib/analytics";
 
 export default function ConsultationHero() {
   return (
@@ -44,8 +45,17 @@ export default function ConsultationHero() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
               <a
                 href="tel:+919830078634"
+                id="btn-call-consultant"
+                data-track="call_consultant_click"
+                onClick={() =>
+                  trackEvent("consultation_call_click", {
+                    button_name: "Call Consultant",
+                    button_location: "consultation_hero",
+                    phone_number: "+919830078634",
+                    page_path: "/book-astrology-consultation",
+                  })
+                }
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-[#632D3D] hover:bg-[#4A1F2B] text-[#FFFDF8] font-sans text-[0.84rem] font-semibold uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
-                id="hero-book-call-btn"
               >
                 <PhoneCall size={15} />
                 <span>Call Consultant</span>
@@ -55,6 +65,16 @@ export default function ConsultationHero() {
                 href="https://wa.me/919330027339?text=Hello%20Achariya%20Debdutta,%20I%20would%20like%20to%20inquire%20about%20a%20telephonic%20astrology%20consultation."
                 target="_blank"
                 rel="noopener noreferrer"
+                id="btn-whatsapp-consultant"
+                data-track="whatsapp_consultant_click"
+                onClick={() =>
+                  trackEvent("consultation_whatsapp_click", {
+                    button_name: "WhatsApp Inquiry",
+                    button_location: "consultation_hero",
+                    whatsapp_number: "+919330027339",
+                    page_path: "/book-astrology-consultation",
+                  })
+                }
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-[#FFFDF8] border border-[#25D366] text-[#24211F] hover:bg-[#25D366]/10 font-sans text-[0.84rem] font-semibold uppercase tracking-wider transition-all duration-200 shadow-xs cursor-pointer"
               >
                 <MessageSquare size={15} className="text-[#25D366]" />
