@@ -4,6 +4,7 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import MetaPixel from "@/components/analytics/MetaPixel";
 import { SITE_URL } from "@/lib/siteConfig";
 
 const cormorant = Cormorant_Garamond({
@@ -109,6 +110,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="bg-primary text-primary antialiased">
+        <MetaPixel />
         <Header />
         <main>{children}</main>
         <Footer />
