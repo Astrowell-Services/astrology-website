@@ -1,8 +1,15 @@
 {
   "channelId": "UCqDfG4lWZ5OJgJSc2XK7g4A",
   "channelHandle": "@AstronamaAchariyaDebdutta",
-  "lastUpdated": "2026-11-14T08:45:18.469Z",
+  "lastUpdated": "2026-11-15T08:57:46.347Z",
   "videos": [
+    {
+      "id": "irKfx8xhqy8",
+      "url": "https://www.youtube.com/watch?v=irKfx8xhqy8",
+      "title": "বৃশ্চিক রাশির বন্ধুরা, এই নভেম্বর মাসে ভিতরের শক্তিকে বাইরে এনে সাফল্য পাওয়ার মাস। #brischikrashi",
+      "publishedAt": "2026-11-14T13:45:22+00:00",
+      "thumbnail": "https://img.youtube.com/vi/irKfx8xhqy8/hqdefault.jpg"
+    },
     {
       "id": "ng2pX_348dE",
       "url": "https://www.youtube.com/watch?v=ng2pX_348dE",
@@ -23,13 +30,6 @@
       "title": "মিথুন রাশি রাহু কেতুর মহাতান্ডবঃ বিরাট লস নাকি হঠাৎ প্রাপ্তিযোগ | Mithun Rashi | Gemini Horoscope",
       "publishedAt": "2026-11-10T13:25:43+00:00",
       "thumbnail": "https://img.youtube.com/vi/VNNUTAiMq2M/hqdefault.jpg"
-    },
-    {
-      "id": "KhUvMBq4WOw",
-      "url": "https://www.youtube.com/watch?v=KhUvMBq4WOw",
-      "title": "বৃষ রাশি রাহু কেতুর মহাতান্ডবঃ কর্মসুখ নাকি হঠাৎ বেকারত্ব | Vrishabh Rashi | Taurus",
-      "publishedAt": "2026-11-10T13:45:10+00:00",
-      "thumbnail": "https://img.youtube.com/vi/KhUvMBq4WOw/hqdefault.jpg"
     }
   ]
 }
