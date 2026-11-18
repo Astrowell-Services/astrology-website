@@ -7,6 +7,7 @@ import HeroDecor from "@/components/astrology/HeroDecor";
 import AstrologerPortrait from "@/components/hero/AstrologerPortrait";
 import CelestialWheel from "@/components/astrology/CelestialWheel";
 import { astrologer } from "@/data/astrologer";
+import { trackEvent } from "@/lib/analytics";
 
 const fadeUpProps = (delay: number) => ({
   initial: { opacity: 0, y: 24 },
@@ -74,6 +75,14 @@ export default function HeroSection() {
               href="tel:+919830078634"
               id="hero-cta-secondary"
               className="btn-secondary"
+              onClick={() =>
+                trackEvent("phone_button_click", {
+                  button_name: "Call Consultant",
+                  button_location: "homepage_hero",
+                  phone_number: "+919830078634",
+                  page_path: "/",
+                })
+              }
             >
               CALL CONSULTANT
             </a>

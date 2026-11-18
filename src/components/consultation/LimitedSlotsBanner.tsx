@@ -53,7 +53,7 @@ export default function LimitedSlotsBanner({ onBookClick }: LimitedSlotsBannerPr
                 id="btn-limited-slots-call"
                 data-track="call_consultant_click"
                 onClick={() =>
-                  trackEvent("consultation_call_click", {
+                  trackEvent("phone_button_click", {
                     button_name: "Book Call Now",
                     button_location: "limited_slots_banner",
                     phone_number: "+919830078634",

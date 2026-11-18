@@ -48,7 +48,7 @@ export default function ConsultationHero() {
                 id="btn-call-consultant"
                 data-track="call_consultant_click"
                 onClick={() =>
-                  trackEvent("consultation_call_click", {
+                  trackEvent("phone_button_click", {
                     button_name: "Call Consultant",
                     button_location: "consultation_hero",
                     phone_number: "+919830078634",

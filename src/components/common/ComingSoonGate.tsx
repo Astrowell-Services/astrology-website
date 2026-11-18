@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import CelestialWheel from "@/components/astrology/CelestialWheel";
 import CelestialParticles from "@/components/astrology/CelestialParticles";
+import { trackEvent } from "@/lib/analytics";
 
 export interface HighlightItem {
   icon: React.ReactNode;
@@ -140,6 +141,13 @@ export default function ComingSoonGate({
                 <a
                   href="tel:+919830078634"
                   id={`coming-soon-call-btn-${serviceKey}`}
+                  onClick={() =>
+                    trackEvent("phone_button_click", {
+                      button_name: "Call Consultant Helpline",
+                      button_location: `coming_soon_${serviceKey}`,
+                      phone_number: "+919830078634",
+                    })
+                  }
                   className="group relative flex items-center justify-center gap-3.5 px-6 py-4 bg-[#632D3D] hover:bg-[#4A1F2B] text-[#FFFDF8] font-sans transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer"
                 >
                   <PhoneCall size={22} className="text-[#FFFDF8] group-hover:scale-110 transition-transform shrink-0" />
